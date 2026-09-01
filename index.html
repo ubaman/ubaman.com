@@ -3,128 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09070a">
+  <meta name="theme-color" content="#07060d">
   <meta name="description" content="Página oficial de Ubaman: directos, videos, redes sociales y enlaces recomendados.">
   <meta property="og:title" content="Ubaman — Streamer y creador de contenido">
   <meta property="og:description" content="Todos los enlaces oficiales de Ubaman en un solo lugar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ubaman.com/">
-  <title>Ubaman — Streamer</title>
+  <title>Ubaman — Enlaces oficiales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="hub.css?v=20260901-2">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css?v=20260901-1">
 </head>
 <body>
-  <div class="rift-bg" aria-hidden="true">
-    <span class="rift-glow rift-glow-one"></span>
-    <span class="rift-glow rift-glow-two"></span>
-    <span class="rift-grid"></span>
-  </div>
+  <div class="page-background" aria-hidden="true"></div>
 
-  <div class="site-shell">
-    <header class="hero">
-      <div class="crest" aria-hidden="true"><span>U</span></div>
-      <div class="hero-copy">
-        <p class="hero-kicker">STREAMER · CREADOR · LEAGUE OF LEGENDS</p>
-        <h1>UBAMAN</h1>
-        <p class="hero-tagline">El hogar oficial de la comunidad barbona</p>
+  <header class="topbar">
+    <a class="wordmark" href="#inicio" aria-label="Ubaman, volver al inicio">
+      <span class="wordmark-icon">U</span>
+      <span><strong>UBAMAN</strong><small>SITIO OFICIAL</small></span>
+    </a>
+    <nav class="topbar-nav" aria-label="Navegación principal">
+      <a href="#directo">DIRECTO</a>
+      <a href="#enlaces">ENLACES</a>
+      <button class="share-button" id="share-button" type="button"><span>↗</span> COMPARTIR</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <p class="status-line"><span></span> STREAMER MEXICANO · LEAGUE OF LEGENDS</p>
+      <h1 id="hero-title">UBAMAN</h1>
+      <h2>DIRECTOS, VIDEOS Y COMUNIDAD EN UN SOLO LUGAR</h2>
+      <p class="hero-copy">Bienvenido a mi espacio oficial. Aquí encuentras mis transmisiones, contenido, redes y todos los enlaces que recomiendo a la comunidad barbona.</p>
+      <div class="hero-actions">
+        <a class="primary-button" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener"><img src="assets/twitch.svg" alt=""> VER TWITCH</a>
+        <a class="secondary-button" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener"><img src="assets/youtube.svg" alt=""> IR A YOUTUBE</a>
       </div>
-      <button class="share-button" id="share-button" type="button" aria-label="Compartir página">
-        <span>↗</span><strong>COMPARTIR</strong>
-      </button>
-    </header>
-
-    <main class="hub-layout">
-      <aside class="side-column">
-        <section class="panel live-links" aria-labelledby="live-links-title">
-          <div class="panel-title">
-            <h2 id="live-links-title">DIRECTOS EN</h2>
-            <span class="live-pulse">EN VIVO</span>
-          </div>
-          <a class="platform-link twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">
-            <span class="platform-icon"><img src="assets/twitch.svg" alt=""></span>
-            <span><strong>TWITCH</strong><small>twitch.tv/elubaman</small></span>
-            <b>↗</b>
-          </a>
-        </section>
-
-        <section class="panel social-links" aria-labelledby="social-links-title">
-          <div class="panel-title"><h2 id="social-links-title">SÍGUEME EN</h2></div>
-          <a class="platform-link youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">
-            <span class="platform-icon"><img src="assets/youtube.svg" alt=""></span>
-            <span><strong>YOUTUBE</strong><small>Videos y guías</small></span>
-            <b>↗</b>
-          </a>
-          <a class="platform-link instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener">
-            <span class="platform-icon"><img src="assets/instagram.svg" alt=""></span>
-            <span><strong>INSTAGRAM</strong><small>@elubaman</small></span>
-            <b>↗</b>
-          </a>
-          <a class="platform-link facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener">
-            <span class="platform-icon"><img src="assets/facebook.svg" alt=""></span>
-            <span><strong>FACEBOOK</strong><small>Ubaman</small></span>
-            <b>↗</b>
-          </a>
-        </section>
-      </aside>
-
-      <div class="main-column">
-        <section class="panel stream-panel" aria-labelledby="stream-title">
-          <div class="stream-heading">
-            <div>
-              <p class="section-kicker"><span></span> CANAL OFICIAL</p>
-              <h2 id="stream-title">MÍRAME EN DIRECTO</h2>
-            </div>
-            <a href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">ABRIR EN TWITCH ↗</a>
-          </div>
-          <div class="twitch-player">
-            <iframe
-              src="https://player.twitch.tv/?channel=elubaman&amp;parent=ubaman.com&amp;parent=www.ubaman.com&amp;autoplay=false&amp;muted=true"
-              title="Directo de Ubaman en Twitch"
-              loading="lazy"
-              allow="autoplay; fullscreen"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </section>
-
-        <section class="featured-section" aria-labelledby="featured-title">
-          <div class="featured-heading">
-            <h2 id="featured-title">ENLACES DESTACADOS</h2>
-            <span>OFICIALES Y RECOMENDADOS</span>
-          </div>
-          <div class="featured-grid">
-            <a class="feature-card feature-bonoxs" href="https://bonoxs.com/?utm_campaign=influ-Ubaman-league_of_legends--Jul2026&amp;utm_medium=influ-instagram&amp;utm_source=influencers" target="_blank" rel="noopener">
-              <span class="feature-badge">RP</span>
-              <span><strong>OBTÉN TU RP EN BONOXS</strong><small>Recargas y tarjetas para tus juegos</small></span>
-              <b>↗</b>
-            </a>
-            <a class="feature-card feature-maono" href="https://bit.ly/41SgIXl" target="_blank" rel="noopener">
-              <span class="feature-badge">M</span>
-              <span><strong>MAONO EN MERCADO LIBRE</strong><small>Micrófonos y equipo recomendado</small></span>
-              <b>↗</b>
-            </a>
-            <a class="feature-card feature-mic" href="https://amzn.to/3PYDRoh" target="_blank" rel="noopener">
-              <span class="feature-badge">MIC</span>
-              <span><strong>MAONO PD200W</strong><small>Conoce el micrófono inalámbrico que uso</small></span>
-              <b>↗</b>
-            </a>
-            <a class="feature-card feature-game" href="https://dls.igg.com/event/giveaway/?key=es/Ubaman" target="_blank" rel="noopener">
-              <span class="feature-badge">DLS</span>
-              <span><strong>DOOMSDAY × UBAMAN</strong><small>Página oficial de la colaboración</small></span>
-              <b>↗</b>
-            </a>
-          </div>
-        </section>
+      <div class="social-dock" aria-label="Redes sociales">
+        <a class="twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener" aria-label="Twitch"><img src="assets/twitch.svg" alt=""></a>
+        <a class="youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/youtube.svg" alt=""></a>
+        <a class="instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt=""></a>
+        <a class="facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/facebook.svg" alt=""></a>
       </div>
-    </main>
+    </div>
+    <a class="scroll-cue" href="#directo">DESCUBRE MÁS</a>
+  </section>
 
-    <footer>
-      <p>© <span id="year"></span> UBAMAN · TODOS LOS ENLACES OFICIALES</p>
-      <span id="share-status" role="status" aria-live="polite"></span>
-    </footer>
-  </div>
+  <main class="content-wrap">
+    <div class="content-inner">
+      <section class="glass-section" id="directo" aria-labelledby="stream-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">CANAL OFICIAL DE TWITCH</p>
+            <h2 id="stream-title">MÍRAME EN DIRECTO</h2>
+          </div>
+          <a href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">ABRIR EN TWITCH ↗</a>
+        </div>
+        <div class="twitch-player">
+          <iframe
+            src="https://player.twitch.tv/?channel=elubaman&amp;parent=ubaman.com&amp;parent=www.ubaman.com&amp;autoplay=false&amp;muted=true"
+            title="Directo de Ubaman en Twitch"
+            loading="lazy"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <section class="links-section" id="enlaces" aria-labelledby="links-title">
+        <div class="links-header">
+          <h2 id="links-title">TODOS MIS ENLACES</h2>
+          <p>Contenido, redes, productos y colaboraciones oficiales seleccionadas por Ubaman.</p>
+        </div>
+        <div class="bento-grid">
+          <a class="link-tile wide tile-twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon"><img src="assets/twitch.svg" alt=""></span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>TWITCH · DIRECTOS</strong><small>Entra al stream y únete a la comunidad</small></span>
+          </a>
+          <a class="link-tile tile-youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon"><img src="assets/youtube.svg" alt=""></span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>YOUTUBE</strong><small>Videos, guías y contenido</small></span>
+          </a>
+          <a class="link-tile tile-instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon"><img src="assets/instagram.svg" alt=""></span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>INSTAGRAM</strong><small>Clips y contenido detrás de cámaras</small></span>
+          </a>
+          <a class="link-tile tile-facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon"><img src="assets/facebook.svg" alt=""></span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>FACEBOOK</strong><small>Videos y novedades</small></span>
+          </a>
+          <a class="link-tile wide tile-bonoxs" href="https://bonoxs.com/?utm_campaign=influ-Ubaman-league_of_legends--Jul2026&amp;utm_medium=influ-instagram&amp;utm_source=influencers" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon text">RP</span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>OBTÉN TU RP EN BONOXS</strong><small>Recargas y tarjetas para tus juegos</small></span>
+          </a>
+          <a class="link-tile tile-maono" href="https://bit.ly/41SgIXl" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon text">M</span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>MAONO</strong><small>Equipo recomendado en Mercado Libre</small></span>
+          </a>
+          <a class="link-tile tile-mic" href="https://amzn.to/3PYDRoh" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon text">MIC</span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>MAONO PD200W</strong><small>El micrófono inalámbrico que uso</small></span>
+          </a>
+          <a class="link-tile wide tile-game" href="https://dls.igg.com/event/giveaway/?key=es/Ubaman" target="_blank" rel="noopener">
+            <span class="tile-top"><span class="tile-icon text">DLS</span><span class="tile-arrow">↗</span></span>
+            <span class="tile-copy"><strong>DOOMSDAY × UBAMAN</strong><small>Página oficial de la colaboración</small></span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> UBAMAN · TODOS LOS ENLACES OFICIALES</p>
+    <span id="share-status" role="status" aria-live="polite"></span>
+  </footer>
 
   <script src="hub.js"></script>
 </body>
