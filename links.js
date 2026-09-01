@@ -4,25 +4,29 @@ const UBAMAN_LINKS = [
     title: 'Twitch — Directos',
     description: 'Entra al stream y forma parte de la comunidad',
     url: 'https://www.twitch.tv/elubaman',
-    icon: 'TW'
+    icon: 'assets/twitch.svg',
+    brand: 'twitch'
   },
   {
     title: 'YouTube',
     description: 'Videos, guías y contenido de League of Legends',
     url: 'https://www.youtube.com/@Ubaman?sub_confirmation=1',
-    icon: 'YT'
+    icon: 'assets/youtube.svg',
+    brand: 'youtube'
   },
   {
     title: 'Instagram',
     description: 'Clips, noticias y contenido detrás de cámaras',
     url: 'https://www.instagram.com/elubaman/',
-    icon: 'IG'
+    icon: 'assets/instagram.svg',
+    brand: 'instagram'
   },
   {
     title: 'Facebook',
     description: 'Videos y novedades de Ubaman',
     url: 'https://www.facebook.com/elubaman',
-    icon: 'FB'
+    icon: 'assets/facebook.svg',
+    brand: 'facebook'
   },
   {
     title: 'Obtén tu RP en Bonoxs',
@@ -54,12 +58,15 @@ const linksContainer = document.querySelector('#dynamic-links');
 
 UBAMAN_LINKS.forEach(link => {
   const anchor = document.createElement('a');
-  anchor.className = 'link-card';
+  anchor.className = `link-card${link.brand ? ` brand-${link.brand}` : ''}`;
   anchor.href = link.url;
   anchor.target = '_blank';
   anchor.rel = 'noopener';
+  const iconContent = link.icon.endsWith('.svg')
+    ? `<img src="${link.icon}" alt="">`
+    : link.icon;
   anchor.innerHTML = `
-    <span class="link-icon">${link.icon}</span>
+    <span class="link-icon">${iconContent}</span>
     <span class="link-copy"><strong>${link.title}</strong><small>${link.description}</small></span>
     <span class="link-arrow">↗</span>
   `;
