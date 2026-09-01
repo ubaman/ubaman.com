@@ -21,7 +21,8 @@ button { font: inherit; }
 .page-background {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(90deg, rgba(5, 4, 11, .9) 0%, rgba(5, 4, 11, .54) 44%, rgba(5, 4, 11, .18) 72%, rgba(5, 4, 11, .42) 100%),
     linear-gradient(0deg, #07060d 0%, transparent 45%),
@@ -64,6 +65,7 @@ button { font: inherit; }
 
 .hero {
   position: relative;
+  z-index: 1;
   width: min(100% - 48px, 1200px);
   min-height: 670px;
   margin: 0 auto;
@@ -134,7 +136,7 @@ button { font: inherit; }
 .tile-mic { --tile: #ff6b75; }
 .tile-game { --tile: #8f72ff; }
 
-footer { width: min(100% - 48px,1200px); margin: 0 auto; padding: 25px 0 34px; display: flex; justify-content: space-between; gap: 15px; color: #706b7a; border-top: 1px solid rgba(255,255,255,.08); font-size: 8px; font-weight: 800; letter-spacing: 1.2px; }
+footer { position: relative; z-index: 2; width: min(100% - 48px,1200px); margin: 0 auto; padding: 25px 0 34px; display: flex; justify-content: space-between; gap: 15px; color: #706b7a; border-top: 1px solid rgba(255,255,255,.08); font-size: 8px; font-weight: 800; letter-spacing: 1.2px; }
 #share-status { color: var(--cyan); }
 
 @media (max-width: 900px) {
