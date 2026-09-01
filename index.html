@@ -3,97 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Coaching personalizado de League of Legends con Ubaman. Mejora tus decisiones, macro, visión y mentalidad competitiva.">
-  <title>Ubaman Coaching | Sube de elo con un plan real</title>
+  <meta name="theme-color" content="#09070a">
+  <meta name="description" content="Página oficial de Ubaman: directos, videos, redes sociales y enlaces recomendados.">
+  <meta property="og:title" content="Ubaman — Streamer y creador de contenido">
+  <meta property="og:description" content="Todos los enlaces oficiales de Ubaman en un solo lugar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ubaman.com/">
+  <title>Ubaman — Streamer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hub.css">
 </head>
 <body>
-  <header class="nav" id="inicio">
-    <a class="brand" href="#inicio" aria-label="Ubaman Coaching, inicio">
-      <span class="brand-mark">U</span><span>UBAMAN</span><small>COACHING</small>
-    </a>
-    <button class="menu" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#metodo">Método</a><a href="#planes">Planes</a><a href="#sobre-mi">Sobre mí</a><a href="links.html">Enlaces</a><a href="#faq">FAQ</a>
-      <a class="button button-small" href="#contacto">Agenda tu sesión</a>
-    </nav>
-  </header>
+  <div class="rift-bg" aria-hidden="true">
+    <span class="rift-glow rift-glow-one"></span>
+    <span class="rift-glow rift-glow-two"></span>
+    <span class="rift-grid"></span>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-grid"></div><div class="glow glow-one"></div><div class="glow glow-two"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> Coaching 1 a 1 · League of Legends</p>
-        <h1>DEJA DE JUGAR<br><em>EN AUTOMÁTICO.</em></h1>
-        <p class="lead">Convierte tus partidas en decisiones conscientes. Analizamos tus errores, construimos un plan claro y trabajamos lo que realmente te está frenando para subir de elo.</p>
-        <div class="hero-actions">
-          <a class="button" href="#planes">Ver planes <span>↗</span></a>
-          <a class="text-link" href="#metodo">Conoce el método <span>↓</span></a>
-        </div>
-        <div class="trust"><span><b>01</b> Análisis real</span><span><b>02</b> Plan personalizado</span><span><b>03</b> Seguimiento</span></div>
+  <div class="site-shell">
+    <header class="hero">
+      <div class="crest" aria-hidden="true"><span>U</span></div>
+      <div class="hero-copy">
+        <p class="hero-kicker">STREAMER · CREADOR · LEAGUE OF LEGENDS</p>
+        <h1>UBAMAN</h1>
+        <p class="hero-tagline">El hogar oficial de la comunidad barbona</p>
       </div>
-      <div class="hero-card reveal">
-        <div class="rank-emblem"><span>U</span></div>
-        <p>Tu próxima división<br>empieza con una decisión</p>
-        <div class="status"><i></i> Sesiones disponibles</div>
+      <button class="share-button" id="share-button" type="button" aria-label="Compartir página">
+        <span>↗</span><strong>COMPARTIR</strong>
+      </button>
+    </header>
+
+    <main class="hub-layout">
+      <aside class="side-column">
+        <section class="panel live-links" aria-labelledby="live-links-title">
+          <div class="panel-title">
+            <h2 id="live-links-title">DIRECTOS EN</h2>
+            <span class="live-pulse">EN VIVO</span>
+          </div>
+          <a class="platform-link twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">
+            <span class="platform-icon"><img src="assets/twitch.svg" alt=""></span>
+            <span><strong>TWITCH</strong><small>twitch.tv/elubaman</small></span>
+            <b>↗</b>
+          </a>
+        </section>
+
+        <section class="panel social-links" aria-labelledby="social-links-title">
+          <div class="panel-title"><h2 id="social-links-title">SÍGUEME EN</h2></div>
+          <a class="platform-link youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">
+            <span class="platform-icon"><img src="assets/youtube.svg" alt=""></span>
+            <span><strong>YOUTUBE</strong><small>Videos y guías</small></span>
+            <b>↗</b>
+          </a>
+          <a class="platform-link instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener">
+            <span class="platform-icon"><img src="assets/instagram.svg" alt=""></span>
+            <span><strong>INSTAGRAM</strong><small>@elubaman</small></span>
+            <b>↗</b>
+          </a>
+          <a class="platform-link facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener">
+            <span class="platform-icon"><img src="assets/facebook.svg" alt=""></span>
+            <span><strong>FACEBOOK</strong><small>Ubaman</small></span>
+            <b>↗</b>
+          </a>
+        </section>
+      </aside>
+
+      <div class="main-column">
+        <section class="panel stream-panel" aria-labelledby="stream-title">
+          <div class="stream-heading">
+            <div>
+              <p class="section-kicker"><span></span> CANAL OFICIAL</p>
+              <h2 id="stream-title">MÍRAME EN DIRECTO</h2>
+            </div>
+            <a href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">ABRIR EN TWITCH ↗</a>
+          </div>
+          <div class="twitch-player">
+            <iframe
+              src="https://player.twitch.tv/?channel=elubaman&amp;parent=ubaman.com&amp;parent=www.ubaman.com&amp;autoplay=false&amp;muted=true"
+              title="Directo de Ubaman en Twitch"
+              loading="lazy"
+              allow="autoplay; fullscreen"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
+
+        <section class="featured-section" aria-labelledby="featured-title">
+          <div class="featured-heading">
+            <h2 id="featured-title">ENLACES DESTACADOS</h2>
+            <span>OFICIALES Y RECOMENDADOS</span>
+          </div>
+          <div class="featured-grid">
+            <a class="feature-card feature-bonoxs" href="https://bonoxs.com/?utm_campaign=influ-Ubaman-league_of_legends--Jul2026&amp;utm_medium=influ-instagram&amp;utm_source=influencers" target="_blank" rel="noopener">
+              <span class="feature-badge">RP</span>
+              <span><strong>OBTÉN TU RP EN BONOXS</strong><small>Recargas y tarjetas para tus juegos</small></span>
+              <b>↗</b>
+            </a>
+            <a class="feature-card feature-maono" href="https://bit.ly/41SgIXl" target="_blank" rel="noopener">
+              <span class="feature-badge">M</span>
+              <span><strong>MAONO EN MERCADO LIBRE</strong><small>Micrófonos y equipo recomendado</small></span>
+              <b>↗</b>
+            </a>
+            <a class="feature-card feature-mic" href="https://amzn.to/3PYDRoh" target="_blank" rel="noopener">
+              <span class="feature-badge">MIC</span>
+              <span><strong>MAONO PD200W</strong><small>Conoce el micrófono inalámbrico que uso</small></span>
+              <b>↗</b>
+            </a>
+            <a class="feature-card feature-game" href="https://dls.igg.com/event/giveaway/?key=es/Ubaman" target="_blank" rel="noopener">
+              <span class="feature-badge">DLS</span>
+              <span><strong>DOOMSDAY × UBAMAN</strong><small>Página oficial de la colaboración</small></span>
+              <b>↗</b>
+            </a>
+          </div>
+        </section>
       </div>
-      <div class="scroll-note">SCROLL PARA MEJORAR <span>↓</span></div>
-    </section>
+    </main>
 
-    <section class="section problem" id="metodo">
-      <div class="section-heading reveal"><p class="eyebrow"><span></span> El problema no siempre es tu mecánica</p><h2>JUGAR MÁS NO GARANTIZA<br><em>JUGAR MEJOR.</em></h2></div>
-      <div class="problem-grid">
-        <article class="stat-card reveal"><strong>01</strong><h3>Detectamos el patrón</h3><p>Revisamos tus partidas para encontrar los errores que se repiten: decisiones, oleadas, visión, rutas y peleas.</p></article>
-        <article class="stat-card featured reveal"><strong>02</strong><h3>Priorizamos lo importante</h3><p>Nada de una lista infinita. Trabajamos uno o dos cambios de alto impacto que puedas aplicar desde tu siguiente partida.</p></article>
-        <article class="stat-card reveal"><strong>03</strong><h3>Medimos tu progreso</h3><p>Te llevas objetivos concretos y una guía de práctica para saber qué mejorar, cómo hacerlo y cuándo avanzar.</p></article>
-      </div>
-    </section>
+    <footer>
+      <p>© <span id="year"></span> UBAMAN · TODOS LOS ENLACES OFICIALES</p>
+      <span id="share-status" role="status" aria-live="polite"></span>
+    </footer>
+  </div>
 
-    <section class="section process">
-      <div class="process-intro reveal"><p class="eyebrow"><span></span> Cómo funciona</p><h2>UN SISTEMA SIMPLE.<br><em>RESULTADOS MEDIBLES.</em></h2><p>No necesitas memorizar cien conceptos. Necesitas entender mejor el juego y crear hábitos que se mantengan bajo presión.</p></div>
-      <ol class="steps">
-        <li class="reveal"><span>01</span><div><h3>Cuestionario inicial</h3><p>Me cuentas tu elo, rol, campeones, metas y qué sientes que te frena.</p></div></li>
-        <li class="reveal"><span>02</span><div><h3>Sesión por Discord</h3><p>Analizamos una repetición o partida en vivo con explicación clara y preguntas.</p></div></li>
-        <li class="reveal"><span>03</span><div><h3>Plan de mejora</h3><p>Recibes puntos clave, ejercicios y metas para tus próximas partidas.</p></div></li>
-        <li class="reveal"><span>04</span><div><h3>Seguimiento</h3><p>Revisamos avances y ajustamos el plan en sesiones posteriores.</p></div></li>
-      </ol>
-    </section>
-
-    <section class="section pricing" id="planes">
-      <div class="section-heading center reveal"><p class="eyebrow"><span></span> Elige tu siguiente paso</p><h2>COACHING A TU <em>MEDIDA.</em></h2><p>Precios de ejemplo: cámbialos antes de publicar.</p></div>
-      <div class="pricing-grid">
-        <article class="price-card reveal"><p class="plan-label">REVISIÓN</p><h3>VOD Review</h3><div class="price"><sup>$</sup>299 <small>MXN</small></div><p class="plan-desc">Para descubrir qué está frenando tu progreso.</p><ul><li>1 partida analizada</li><li>Sesión de 50 minutos</li><li>Resumen de errores clave</li><li>Plan de práctica</li></ul><a class="button button-outline" href="#contacto" data-plan="VOD Review">Elegir plan</a></article>
-        <article class="price-card popular reveal"><div class="popular-tag">MÁS ELEGIDO</div><p class="plan-label">MEJORA</p><h3>Sesión 1 a 1</h3><div class="price"><sup>$</sup>499 <small>MXN</small></div><p class="plan-desc">Trabajo profundo y personalizado para tu rol.</p><ul><li>Diagnóstico previo</li><li>Sesión de 75 minutos</li><li>VOD o partida en vivo</li><li>Plan personalizado</li><li>7 días de seguimiento</li></ul><a class="button" href="#contacto" data-plan="Sesión 1 a 1">Quiero mejorar <span>↗</span></a></article>
-        <article class="price-card reveal"><p class="plan-label">PROGRESO</p><h3>Pack Ascenso</h3><div class="price"><sup>$</sup>1,199 <small>MXN</small></div><p class="plan-desc">Acompañamiento para convertir cambios en hábitos.</p><ul><li>3 sesiones individuales</li><li>Análisis de progreso</li><li>Plan ajustado cada semana</li><li>Seguimiento por Discord</li></ul><a class="button button-outline" href="#contacto" data-plan="Pack Ascenso">Elegir pack</a></article>
-      </div>
-    </section>
-
-    <section class="section coach" id="sobre-mi">
-      <div class="coach-badge reveal"><div class="rank-emblem small"><span>U</span></div><b>UBAMAN</b><small>CREADOR · JUGADOR · COACH</small></div>
-      <div class="coach-copy reveal"><p class="eyebrow"><span></span> Tu coach</p><h2>APRENDE DE ALGUIEN QUE<br><em>VIVE EL JUEGO.</em></h2><p>Soy Ubaman, creador de contenido de League of Legends. Mi objetivo no es decirte solamente “qué hiciste mal”, sino ayudarte a entender por qué ocurrió y darte una forma sencilla de tomar mejores decisiones la próxima vez.</p><p>Las sesiones son directas, sin ego y adaptadas a tu nivel. Aquí vienes a preguntar, experimentar y salir con claridad.</p><div class="social-row"><a href="#">Twitch ↗</a><a href="#">YouTube ↗</a><a href="#">TikTok ↗</a></div></div>
-    </section>
-
-    <section class="section faq" id="faq">
-      <div class="section-heading reveal"><p class="eyebrow"><span></span> Preguntas frecuentes</p><h2>ANTES DE <em>EMPEZAR.</em></h2></div>
-      <div class="accordion">
-        <details class="reveal"><summary>¿Qué elo necesito para tomar coaching?<span>+</span></summary><p>Ninguno en particular. La sesión se adapta a tu experiencia, desde fundamentos hasta decisiones más avanzadas.</p></details>
-        <details class="reveal"><summary>¿Cómo se realiza la sesión?<span>+</span></summary><p>Por Discord, compartiendo pantalla. Podemos revisar una repetición o trabajar sobre una partida en vivo según el plan.</p></details>
-        <details class="reveal"><summary>¿Sirve si no sé cuál es mi error?<span>+</span></summary><p>Sí. Precisamente el diagnóstico inicial sirve para identificar patrones que suelen pasar desapercibidos al jugar.</p></details>
-        <details class="reveal"><summary>¿Puedo regalar una sesión?<span>+</span></summary><p>Sí. Escríbeme indicando que es un regalo y coordinamos la entrega.</p></details>
-      </div>
-    </section>
-
-    <section class="cta" id="contacto">
-      <div class="glow glow-three"></div><p class="eyebrow"><span></span> ¿Listo para dejar de estar estancado?</p><h2>TU SIGUIENTE RANGO<br><em>NO LLEGA SOLO.</em></h2><p>Agenda tu sesión y empieza a jugar con intención.</p>
-      <a class="button button-large" id="contact-button" href="https://wa.me/5210000000000?text=Hola%20Ubaman,%20quiero%20informes%20sobre%20tus%20sesiones%20de%20coaching" target="_blank" rel="noopener">Hablar con Ubaman <span>↗</span></a>
-      <small>Reemplaza el número de WhatsApp en index.html antes de publicar.</small>
-    </section>
-  </main>
-  <footer><a class="brand" href="#inicio"><span class="brand-mark">U</span><span>UBAMAN</span></a><p>© <span id="year"></span> Ubaman Coaching. Todos los derechos reservados.</p><p class="legal">League of Legends es una marca de Riot Games. Este servicio no está afiliado ni respaldado por Riot Games.</p></footer>
-  <script src="script.js"></script>
+  <script src="hub.js"></script>
 </body>
 </html>
