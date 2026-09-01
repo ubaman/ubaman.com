@@ -1,0 +1,75 @@
+/* Colores e iconos oficiales de las redes sociales */
+.links-social a {
+  width: 44px;
+  height: 44px;
+  border-color: rgba(255, 255, 255, .16);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .2);
+}
+
+.links-social a img {
+  width: 21px;
+  height: 21px;
+}
+
+.links-social a:hover {
+  filter: brightness(1.12);
+  border-color: rgba(255, 255, 255, .45);
+  transform: translateY(-3px);
+}
+
+.links-social .social-twitch {
+  background: #9146ff;
+}
+
+.links-social .social-youtube {
+  background: #ff0000;
+}
+
+.links-social .social-instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d 58%, #fcaf45);
+}
+
+.links-social .social-facebook {
+  background: #0866ff;
+}
+
+.link-icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.link-card.brand-twitch {
+  border-left: 3px solid #9146ff;
+}
+
+.link-card.brand-twitch .link-icon {
+  background: #9146ff;
+  border-color: #9146ff;
+}
+
+.link-card.brand-youtube {
+  border-left: 3px solid #ff0000;
+}
+
+.link-card.brand-youtube .link-icon {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.link-card.brand-instagram {
+  border-left: 3px solid #e4405f;
+}
+
+.link-card.brand-instagram .link-icon {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d 58%, #fcaf45);
+  border-color: #e4405f;
+}
+
+.link-card.brand-facebook {
+  border-left: 3px solid #0866ff;
+}
+
+.link-card.brand-facebook .link-icon {
+  background: #0866ff;
+  border-color: #0866ff;
+}
