@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Todos los enlaces oficiales de Ubaman: directos, videos, redes, colaboraciones y coaching de League of Legends.">
+  <title>Enlaces oficiales | Ubaman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="links.css">
+</head>
+<body class="links-page">
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Volver a Ubaman Coaching">
+      <span class="brand-mark">U</span><span>UBAMAN</span><small>OFICIAL</small>
+    </a>
+    <button class="menu" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html">Coaching</a>
+      <a class="button button-small" href="index.html#contacto">Agenda tu sesión</a>
+    </nav>
+  </header>
+
+  <main class="links-main">
+    <div class="links-grid"></div>
+    <div class="links-glow links-glow-one"></div>
+    <div class="links-glow links-glow-two"></div>
+
+    <section class="links-profile" aria-labelledby="links-title">
+      <div class="links-avatar" aria-hidden="true"><span>U</span></div>
+      <p class="eyebrow"><span></span> Enlaces oficiales</p>
+      <h1 id="links-title">UBAMAN</h1>
+      <p class="links-bio">Creador de contenido mexicano de videojuegos. League of Legends, directos, comunidad y coaching.</p>
+      <div class="links-social" aria-label="Redes principales">
+        <a href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener" aria-label="Twitch">TW</a>
+        <a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        <a href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/elubaman" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      </div>
+    </section>
+
+    <section class="links-list" aria-label="Lista de enlaces">
+      <a class="link-card link-card-featured" href="index.html#planes">
+        <span class="link-icon">⚔</span>
+        <span class="link-copy"><strong>Coaching de League of Legends</strong><small>Mejora tu juego con un plan personalizado</small></span>
+        <span class="link-arrow">→</span>
+      </a>
+      <div id="dynamic-links"></div>
+      <button class="copy-link" id="copy-page-link" type="button"><span>⧉</span> Copiar este enlace</button>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="links-footer">
+    <p>© <span id="year"></span> Ubaman · Hecho para la comunidad barbona.</p>
+    <a href="index.html">ubaman.com</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="links.js"></script>
+</body>
+</html>
