@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portal.css?v=20260902-1">
+  <link rel="stylesheet" href="portal.css?v=20260903-1">
 </head>
 <body>
   <div class="page-background" aria-hidden="true"></div>
@@ -25,6 +25,7 @@
     </a>
     <nav class="topbar-nav" aria-label="Navegación principal">
       <a href="#directo">DIRECTO</a>
+      <a href="#videos">VIDEOS</a>
       <a href="#enlaces">ENLACES</a>
       <button class="share-button" id="share-button" type="button"><span>↗</span> COMPARTIR</button>
     </nav>
@@ -68,6 +69,60 @@
             allow="autoplay; fullscreen"
             allowfullscreen>
           </iframe>
+        </div>
+      </section>
+
+      <section class="youtube-section" id="videos" aria-labelledby="videos-title">
+        <div class="videos-heading">
+          <div>
+            <p class="section-label">CONTENIDO NUEVO AUTOMÁTICAMENTE</p>
+            <h2 id="videos-title">ÚLTIMOS VIDEOS</h2>
+          </div>
+          <p>Los videos más recientes de mis dos canales, siempre actualizados desde YouTube.</p>
+        </div>
+
+        <div class="youtube-grid">
+          <article class="youtube-channel">
+            <div class="channel-heading">
+              <span class="channel-mark"><img src="assets/youtube.svg" alt=""></span>
+              <span>
+                <small>LEAGUE OF LEGENDS · PC</small>
+                <strong>UBAMAN</strong>
+              </span>
+              <a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">VER CANAL ↗</a>
+            </div>
+            <div class="youtube-player">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=UUxqDIXlqSU1ksBuIJNk3Aog"
+                title="Últimos videos de Ubaman en League of Legends para PC"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </article>
+
+          <article class="youtube-channel mobile-channel">
+            <div class="channel-heading">
+              <span class="channel-mark"><img src="assets/youtube.svg" alt=""></span>
+              <span>
+                <small>WILD RIFT · MOBILE</small>
+                <strong>UBAMAN MOBILE</strong>
+              </span>
+              <a href="https://www.youtube.com/@UbamanMobile?sub_confirmation=1" target="_blank" rel="noopener">VER CANAL ↗</a>
+            </div>
+            <div class="youtube-player">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=UUcNeqZPuICtkxje5ZKR_VbA"
+                title="Últimos videos de Ubaman Mobile en Wild Rift"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </article>
         </div>
       </section>
 
