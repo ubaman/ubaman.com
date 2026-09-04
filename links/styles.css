@@ -115,8 +115,6 @@ button { font: inherit; }
 .instagram { --brand: #ff4f9a; }
 .facebook { --brand: #4f8cff; }
 .bonoxs { --brand: #f2c55c; }
-.maono { --brand: #50d5c8; }
-.microphone { --brand: #ff7b84; }
 .doomsday { --brand: #8f72ff; }
 
 footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 34px 0 8px; color: #6f6976; font-size: 8px; font-weight: 900; letter-spacing: 1.4px; }
