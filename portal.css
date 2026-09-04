@@ -204,8 +204,6 @@ button { font: inherit; }
 .tile-instagram { --tile: #ff4f9a; }
 .tile-facebook { --tile: #4f8cff; }
 .tile-bonoxs { --tile: #f2c55c; }
-.tile-maono { --tile: #50d5c8; }
-.tile-mic { --tile: #ff6b75; }
 .tile-game { --tile: #8f72ff; }
 
 footer { position: relative; z-index: 2; width: min(100% - 48px,1200px); margin: 0 auto; padding: 25px 0 34px; display: flex; justify-content: space-between; gap: 15px; color: #706b7a; border-top: 1px solid rgba(255,255,255,.08); font-size: 8px; font-weight: 800; letter-spacing: 1.2px; }
