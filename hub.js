@@ -77,3 +77,78 @@ shareButton.addEventListener('click', async () => {
     shareStatus.textContent = '';
   }, 2500);
 });
+
+
+const coachPromo = document.querySelector('#coach-promo');
+const coachTimer = document.querySelector('#coach-timer');
+const promoClose = document.querySelector('#promo-close');
+
+if (coachPromo && coachTimer && promoClose) {
+  const duration = 20 * 60 * 1000;
+  const deadlineKey = 'ubaman-coach-promo-deadline-v1';
+  const dismissedKey = 'ubaman-coach-promo-dismissed-v1';
+  let deadline = Date.now() + duration;
+
+  try {
+    const savedDeadline = window.localStorage.getItem(deadlineKey);
+    if (savedDeadline === null) {
+      window.localStorage.setItem(deadlineKey, String(deadline));
+    } else {
+      const parsedDeadline = Number(savedDeadline);
+      deadline = Number.isFinite(parsedDeadline) ? parsedDeadline : deadline;
+      if (!Number.isFinite(parsedDeadline)) {
+        window.localStorage.setItem(deadlineKey, String(deadline));
+      }
+    }
+
+    if (window.sessionStorage.getItem(dismissedKey) === 'true') {
+      coachPromo.hidden = true;
+    }
+  } catch (error) {
+    // El contador sigue funcionando aunque el navegador bloquee el almacenamiento.
+  }
+
+  const hidePromotion = () => {
+    coachPromo.classList.add('is-expiring');
+    window.setTimeout(() => {
+      coachPromo.hidden = true;
+    }, 700);
+  };
+
+  const updatePromotion = () => {
+    const remaining = Math.max(0, deadline - Date.now());
+
+    if (remaining <= 0) {
+      coachTimer.textContent = '00:00';
+      hidePromotion();
+      return false;
+    }
+
+    const totalSeconds = Math.ceil(remaining / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    coachTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    coachTimer.setAttribute('aria-label', `${minutes} minutos y ${seconds} segundos restantes`);
+    return true;
+  };
+
+  if (deadline <= Date.now() || coachPromo.hidden) {
+    coachPromo.hidden = true;
+  } else {
+    updatePromotion();
+    const timerInterval = window.setInterval(() => {
+      if (!updatePromotion()) {
+        window.clearInterval(timerInterval);
+      }
+    }, 1000);
+  }
+
+  promoClose.addEventListener('click', () => {
+    try {
+      window.sessionStorage.setItem(dismissedKey, 'true');
+    } catch (error) {
+      // Cerrar la promoción no depende del almacenamiento.
+    }
+    hidePromotion();
+  });
+}
