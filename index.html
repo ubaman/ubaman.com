@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portal.css?v=20260904-1">
+  <link rel="stylesheet" href="portal.css?v=20260905-2">
 </head>
 <body>
   <div class="page-background" aria-hidden="true"></div>
@@ -182,11 +182,32 @@
     </div>
   </main>
 
+
+  <aside class="coach-promo" id="coach-promo" aria-labelledby="coach-promo-title">
+    <button class="promo-close" id="promo-close" type="button" aria-label="Cerrar promoción">×</button>
+    <div class="promo-badge" aria-label="50 por ciento de descuento">
+      <strong>50%</strong>
+      <span>DESCUENTO</span>
+    </div>
+    <div class="promo-copy">
+      <p>OFERTA DE LANZAMIENTO</p>
+      <h2 id="coach-promo-title">COACHING 1 A 1</h2>
+      <div class="promo-details">
+        <span class="promo-price"><del>$998</del><strong>$499 MXN</strong></span>
+        <span class="promo-countdown">
+          <small>TERMINA EN</small>
+          <strong id="coach-timer" role="timer" aria-atomic="true">20:00</strong>
+        </span>
+      </div>
+      <a href="/coach/">APROVECHAR DESCUENTO <span>→</span></a>
+    </div>
+  </aside>
+
   <footer>
     <p>© <span id="year"></span> UBAMAN · TODOS LOS ENLACES OFICIALES</p>
     <span id="share-status" role="status" aria-live="polite"></span>
   </footer>
 
-  <script src="hub.js?v=20260902-1"></script>
+  <script src="hub.js?v=20260905-2"></script>
 </body>
 </html>
