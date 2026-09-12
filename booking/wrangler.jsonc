@@ -7,7 +7,7 @@
   "triggers": {"crons": ["*/5 * * * *"]},
   "vars": {
     "BOOKING_ENABLED": "false",
-    "PUBLIC_ORIGIN": "https://REPLACE.workers.dev",
+    "PUBLIC_ORIGIN": "https://ubaman-booking.albertograjeda16.workers.dev",
     "TIME_ZONE": "America/Mexico_City",
     "START_HOUR": "9",
     "END_HOUR": "17",
