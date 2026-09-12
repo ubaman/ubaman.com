@@ -3,7 +3,7 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-09-01",
   "assets": {"directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"]},
-  "d1_databases": [{"binding": "DB", "database_name": "ubaman-booking", "database_id": "REPLACE_WITH_D1_ID"}],
+  "d1_databases": [{"binding": "DB", "database_name": "ubaman-booking", "database_id": "32a0f455-ec25-493a-988f-9c74f5775a79"}],
   "triggers": {"crons": ["*/5 * * * *"]},
   "vars": {
     "BOOKING_ENABLED": "false",
