@@ -12,6 +12,6 @@
     "START_HOUR": "9",
     "END_HOUR": "17",
     "DAYS": "0,1,2,3,4,5,6",
-    "TURNSTILE_SITE_KEY": "REPLACE_WITH_SITE_KEY"
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAExsRreVLNpXXRGQ"
   }
 }
