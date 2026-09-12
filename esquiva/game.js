@@ -69,10 +69,9 @@ function update(dt){
  time+=dt;inv=Math.max(0,inv-dt);flash=Math.max(0,flash-dt);dashCd=Math.max(0,dashCd-dt);dashTime=Math.max(0,dashTime-dt);
  let dx=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0);
  let dy=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);
- if(!dx&&!dy){dx=target.x-p.x;dy=target.y-p.y;}
- const len=Math.hypot(dx,dy),step=keys.size?(dashTime>0?800:270)*dt:Math.min(len,(dashTime>0?800:270)*dt);
- if(len){p.x=clamp(p.x+dx/len*step,R+8,W-R-8);p.y=clamp(p.y+dy/len*step,R+8,H-R-8);}
- if(keys.size)target={...p};
+ // Pointer input sets the position directly; only keyboard movement uses speed.
+ const len=Math.hypot(dx,dy),step=(dashTime>0?800:270)*dt;
+ if(len){p.x=clamp(p.x+dx/len*step,R+8,W-R-8);p.y=clamp(p.y+dy/len*step,R+8,H-R-8);target={...p};}
  next-=dt;if(next<=0){spawn();next=Math.max(.75,1.9-time/70);}
  for(const h of hazards){
  h.age+=dt;const t=h.age-h.warn;
@@ -133,7 +132,13 @@ function draw(){
  if(flash>0){ctx.fillStyle='rgba(255,65,96,.18)';ctx.fillRect(0,0,W,H);}
 }
 function frame(now){const dt=Math.min((now-last)/1000,.035)||0;last=now;if(state==='playing')update(dt);draw();requestAnimationFrame(frame);}
-function point(e){const b=canvas.getBoundingClientRect();target={x:clamp((e.clientX-b.left)*W/b.width,20,W-20),y:clamp((e.clientY-b.top)*H/b.height,20,H-20)};}
+function point(e){
+ const b=canvas.getBoundingClientRect();
+ // No interpolation, easing, or travel-speed limit for mouse and touch.
+ p={x:clamp((e.clientX-b.left)*W/b.width,R+8,W-R-8),y:clamp((e.clientY-b.top)*H/b.height,R+8,H-R-8)};
+ target={...p};
+ draw();
+}
 canvas.addEventListener('pointerdown',e=>{if(state!=='playing')return;canvas.focus();point(e);if(e.pointerType!=='mouse'){touchId=e.pointerId;canvas.setPointerCapture(e.pointerId);}});
 canvas.addEventListener('pointermove',e=>{if(state==='playing'&&(e.pointerType==='mouse'||e.pointerId===touchId))point(e);});
 canvas.addEventListener('pointerup',()=>touchId=null);
