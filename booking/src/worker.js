@@ -3,8 +3,20 @@ import {PACKAGES,nowSeconds,candidates,validateBooking,checkoutBody,verifySignat
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}});
 const sql=(env,query,...args)=>env.DB.prepare(query).bind(...args);
 const rows=async stmt=>(await stmt.all()).results;
+function setupStatus(env) {
+  const required=['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY','EMAIL_FROM','COACH_EMAIL','ADMIN_TOKEN','TURNSTILE_SECRET_KEY','TURNSTILE_SITE_KEY','PUBLIC_ORIGIN','TIME_ZONE'];
+  // Names and boolean checks only. Never return secret values.
+  const missing=required.filter(k=>typeof env[k]!=='string' || !env[k].trim() || env[k].includes('REPLACE'));
+  return {
+    bookingEnabled:env.BOOKING_ENABLED==='true',
+    missing,
+    stripeTestKeyValid:env.STRIPE_MODE!=='test' || (typeof env.STRIPE_SECRET_KEY==='string' && env.STRIPE_SECRET_KEY.startsWith('sk_test_')),
+    adminKeyValid:typeof env.ADMIN_TOKEN==='string' && env.ADMIN_TOKEN.length>=32
+  };
+}
 function configured(env) {
-  return env.BOOKING_ENABLED==='true' && (env.STRIPE_MODE!=='test' || env.STRIPE_SECRET_KEY?.startsWith('sk_test_')) && ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY','EMAIL_FROM','COACH_EMAIL','ADMIN_TOKEN','TURNSTILE_SECRET_KEY','TURNSTILE_SITE_KEY','PUBLIC_ORIGIN','TIME_ZONE'].every(k=>env[k] && !env[k].includes('REPLACE'));
+  const s=setupStatus(env);
+  return s.bookingEnabled && !s.missing.length && s.stripeTestKeyValid && s.adminKeyValid;
 }
 async function body(req) {
   const text=await req.text();
@@ -165,7 +177,7 @@ export default {
     try {
       if(url.pathname==='/api/webhook' && req.method==='POST') return await webhook(req,env,ctx);
       if(req.method==='POST' && req.headers.get('Origin')!==env.PUBLIC_ORIGIN) return json({error:'Origen no permitido.'},403);
-      if(url.pathname==='/api/config' && req.method==='GET') return json({enabled:configured(env),packages:PACKAGES,zone:env.TIME_ZONE,siteKey:env.TURNSTILE_SITE_KEY});
+      if(url.pathname==='/api/config' && req.method==='GET') return json({enabled:configured(env),packages:PACKAGES,zone:env.TIME_ZONE,siteKey:env.TURNSTILE_SITE_KEY,setup:setupStatus(env)});
       if(url.pathname==='/api/slots' && req.method==='GET') return json({slots:configured(env)?await availability(env):[]});
       if(url.pathname==='/api/book' && req.method==='POST') return await book(req,env);
       if(url.pathname==='/api/status' && req.method==='POST') return await status(req,env);
