@@ -4,7 +4,7 @@ const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control
 const sql=(env,query,...args)=>env.DB.prepare(query).bind(...args);
 const rows=async stmt=>(await stmt.all()).results;
 function configured(env) {
-  return env.BOOKING_ENABLED==='true' && ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY','EMAIL_FROM','COACH_EMAIL','ADMIN_TOKEN','TURNSTILE_SECRET_KEY','TURNSTILE_SITE_KEY','PUBLIC_ORIGIN','TIME_ZONE'].every(k=>env[k] && !env[k].includes('REPLACE'));
+  return env.BOOKING_ENABLED==='true' && (env.STRIPE_MODE!=='test' || env.STRIPE_SECRET_KEY?.startsWith('sk_test_')) && ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY','EMAIL_FROM','COACH_EMAIL','ADMIN_TOKEN','TURNSTILE_SECRET_KEY','TURNSTILE_SITE_KEY','PUBLIC_ORIGIN','TIME_ZONE'].every(k=>env[k] && !env[k].includes('REPLACE'));
 }
 async function body(req) {
   const text=await req.text();
@@ -12,6 +12,7 @@ async function body(req) {
   return JSON.parse(text);
 }
 async function stripe(env,path,form,key) {
+  if(env.STRIPE_MODE==='test' && !env.STRIPE_SECRET_KEY?.startsWith('sk_test_')) throw new Error('Test Stripe key required');
   const response=await fetch(`https://api.stripe.com/v1/${path}`,{
     method:form?'POST':'GET',headers:{Authorization:`Bearer ${env.STRIPE_SECRET_KEY}`,...(form?{'Content-Type':'application/x-www-form-urlencoded','Idempotency-Key':key}:{})},body:form,signal:AbortSignal.timeout(15000)
   });
