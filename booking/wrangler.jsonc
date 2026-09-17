@@ -29,6 +29,6 @@
     "END_HOUR": "17",
     "DAYS": "0,1,2,3,4,5,6",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAExsRreVLNpXXRGQ",
-    "STRIPE_MODE": "test"
+    "STRIPE_MODE": "live"
   }
 }
