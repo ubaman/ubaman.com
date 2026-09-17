@@ -11,7 +11,7 @@ function setup(){return {...envBase,DB:database()};}
 const ctx={waitUntil(){}};
 function req(path,data,headers={}){return new Request(envBase.PUBLIC_ORIGIN+'/api/'+path,{method:data?'POST':'GET',headers:{Origin:envBase.PUBLIC_ORIGIN,'Content-Type':'application/json',...headers},body:data?JSON.stringify(data):undefined});}
 const input=(slots,q=1)=>({quantity:q,slots,name:'Cliente Prueba',email:'client@example.com',challenge:'test'});
-function paymentMock({timeout=false}={}){let calls=0,session,body;return {get calls(){return calls;},get session(){return session;},get body(){return body;},fetch:async(url,options)=>{if(url.includes('siteverify'))return Response.json({success:true,hostname:'booking.example.com',action:'booking'});if(url.includes('stripe.com')){calls++;if(!session){body=new URLSearchParams(options.body);session={id:'cs_test_'+crypto.randomUUID(),url:'https://checkout.stripe.com/test',status:'open',payment_status:'unpaid',mode:'payment',currency:'usd',amount_total:Number(body.get('line_items[0][price_data][unit_amount]')),metadata:{order_id:body.get('metadata[order_id]')}};}if(timeout&&calls===1)throw new Error('network timeout after creation');return Response.json(session);}return Response.json({id:'email_test'});}};}
+function paymentMock({timeout=false,hostname='booking.example.com'}={}){let calls=0,session,body;return {get calls(){return calls;},get session(){return session;},get body(){return body;},fetch:async(url,options)=>{if(url.includes('siteverify'))return Response.json({success:true,hostname,action:'booking'});if(url.includes('stripe.com')){calls++;if(!session){body=new URLSearchParams(options.body);session={id:'cs_test_'+crypto.randomUUID(),url:'https://checkout.stripe.com/test',status:'open',payment_status:'unpaid',mode:'payment',currency:'usd',amount_total:Number(body.get('line_items[0][price_data][unit_amount]')),metadata:{order_id:body.get('metadata[order_id]')}};}if(timeout&&calls===1)throw new Error('network timeout after creation');return Response.json(session);}return Response.json({id:'email_test'});}};}
 
 test('prices and booking validation reject tampering, duplicate or insufficient dates',()=>{const env=setup(),slots=candidates(env);assert.deepEqual(PACKAGES,{1:4000,3:9600,5:16000});assert.equal(validateBooking({...input([slots[0].start]),amount:1},env).amount,4000);assert.throws(()=>validateBooking(input([slots[0].start,slots[0].start,slots[1].start],3),env));assert.throws(()=>validateBooking(input([slots[0].start],5),env));assert.throws(()=>validateBooking(input([1]),env));});
 test('schedule respects local hours, notice, buffer, and horizon across DST',()=>{for(const zone of ['America/Mexico_City','America/Hermosillo','America/New_York']){const now=Date.parse('2026-10-30T12:00:00Z')/1000;const slots=candidates({...envBase,TIME_ZONE:zone},now);assert.ok(slots.length>0);for(const s of slots){assert.ok(s.start>=now+7200);const hour=Number(new Intl.DateTimeFormat('en',{timeZone:zone,hour:'numeric',hourCycle:'h23'}).format(new Date(s.start*1000)));assert.ok(hour>=9&&hour<=16);assert.ok(s.day<='2026-11-13');}}});
@@ -24,3 +24,59 @@ test('network ambiguity retains locks; reconciliation recovers the same checkout
 test('paid webhook is idempotent, outbox sends separately once, expired event cannot free paid slot',async()=>{const env=setup(),mock=paymentMock(),original=globalThis.fetch;globalThis.fetch=mock.fetch;try{await worker.fetch(req('book',input([candidates(env)[0].start])),env,ctx);const order=env.DB.raw.prepare('SELECT * FROM orders').get(),session={...mock.session,status:'complete',payment_status:'paid'};await settle(env,order,session);await settle(env,order,session);assert.equal(env.DB.raw.prepare('SELECT status FROM orders').get().status,'paid');assert.equal(env.DB.raw.prepare('SELECT count(*) n FROM outbox').get().n,2);await sendOutbox(env);await sendOutbox(env);assert.equal(env.DB.raw.prepare('SELECT sum(attempts) n FROM outbox').get().n,2);await settle(env,order,{...session,status:'expired'});assert.equal(env.DB.raw.prepare('SELECT active FROM slots').get().active,1);}finally{globalThis.fetch=original;}});
 test('wrong amount holds order for review without emailing; expired checkout frees capacity',async()=>{for(const mismatch of [true,false]){const env=setup(),mock=paymentMock(),original=globalThis.fetch;globalThis.fetch=mock.fetch;try{await worker.fetch(req('book',input([candidates(env)[0].start])),env,ctx);const order=env.DB.raw.prepare('SELECT * FROM orders').get();await settle(env,order,{...mock.session,status:mismatch?'complete':'expired',payment_status:mismatch?'paid':'unpaid',amount_total:1});assert.equal(env.DB.raw.prepare('SELECT status FROM orders').get().status,mismatch?'review':'expired');assert.equal(env.DB.raw.prepare('SELECT active FROM slots').get().active,mismatch?1:0);assert.equal(env.DB.raw.prepare('SELECT count(*) n FROM outbox').get().n,0);}finally{globalThis.fetch=original;}}});
 test('blocking a date excludes it and rejects checkout on that date',async()=>{const env=setup(),mock=paymentMock(),original=globalThis.fetch;globalThis.fetch=mock.fetch;try{const slot=candidates(env)[0];await env.DB.prepare('INSERT INTO blocked_days VALUES(?)').bind(slot.day).run();const r=await worker.fetch(req('slots'),env,ctx);assert.ok(!(await r.json()).slots.some(s=>s.day===slot.day));assert.equal((await worker.fetch(req('book',input([slot.start])),env,ctx)).status,409);}finally{globalThis.fetch=original;}});
+
+test('legacy page redirects keep result paths and queries on the canonical domain',async()=>{
+  const env={...setup(),PUBLIC_ORIGIN:'https://reservas.example.com',LEGACY_ORIGIN:envBase.PUBLIC_ORIGIN,ASSETS:{fetch:()=>new Response('calendar')}};
+  for(const method of ['GET','HEAD']) for(const path of ['/','/resultado.html?from=stripe','/admin.html','//evil.example/result']) {
+    const response=await worker.fetch(new Request(env.LEGACY_ORIGIN+path,{method}),env,ctx);
+    assert.equal(response.status,307);
+    const target=new URL(response.headers.get('Location'));
+    assert.equal(target.origin,env.PUBLIC_ORIGIN);
+    assert.equal(target.pathname+target.search,path);
+    assert.equal(target.hash,''); // The browser carries over an existing result token.
+    assert.equal(response.headers.get('Cache-Control'),'no-store');
+  }
+  const page=await worker.fetch(new Request(env.PUBLIC_ORIGIN+'/'),env,ctx);
+  assert.equal(page.status,200);
+  assert.equal(await page.text(),'calendar');
+  assert.equal((await worker.fetch(new Request(env.LEGACY_ORIGIN+'/api/config'),env,ctx)).status,200);
+});
+
+test('custom-domain checkout and result work with the existing signed webhook URL',async()=>{
+  const env={...setup(),PUBLIC_ORIGIN:'https://reservas.example.com',LEGACY_ORIGIN:envBase.PUBLIC_ORIGIN};
+  const mock=paymentMock({hostname:'reservas.example.com'}),original=globalThis.fetch,pending=[];
+  globalThis.fetch=mock.fetch;
+  const post=(path,data,origin=env.PUBLIC_ORIGIN)=>new Request(env.PUBLIC_ORIGIN+'/api/'+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(data)});
+  try {
+    const response=await worker.fetch(post('book',input([candidates(env)[0].start])),env,ctx);
+    assert.equal(response.status,200);
+    const order=env.DB.raw.prepare('SELECT * FROM orders').get();
+    assert.equal(mock.body.get('success_url'),env.PUBLIC_ORIGIN+'/resultado.html#'+order.token);
+    assert.equal(mock.body.get('cancel_url'),env.PUBLIC_ORIGIN+'/resultado.html#'+order.token);
+    const raw=JSON.stringify({type:'checkout.session.completed',data:{object:{...mock.session,status:'complete',payment_status:'paid'}}});
+    const timestamp=Math.floor(Date.now()/1000);
+    const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(env.STRIPE_WEBHOOK_SECRET),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+    const signature=Buffer.from(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(`${timestamp}.${raw}`))).toString('hex');
+    const webhook=await worker.fetch(new Request(env.LEGACY_ORIGIN+'/api/webhook',{method:'POST',headers:{'Stripe-Signature':`t=${timestamp},v1=${signature}`},body:raw}),env,{waitUntil(p){pending.push(p);}});
+    await Promise.all(pending);
+    assert.equal(webhook.status,200);
+    assert.equal(webhook.headers.get('Location'),null);
+    const result=await worker.fetch(post('status',{token:order.token}),env,ctx);
+    assert.equal(result.status,200);
+    assert.equal((await result.json()).status,'paid');
+    assert.equal(env.DB.raw.prepare('SELECT count(*) n FROM outbox').get().n,2);
+    assert.equal((await worker.fetch(post('status',{token:order.token},'https://evil.example'),env,ctx)).status,403);
+    assert.equal((await worker.fetch(new Request(env.LEGACY_ORIGIN+'/api/webhook',{method:'POST',body:raw}),env,ctx)).status,400);
+  } finally {globalThis.fetch=original;}
+});
+
+test('custom-domain bookings reject Turnstile tokens issued for the old hostname',async()=>{
+  const env={...setup(),PUBLIC_ORIGIN:'https://reservas.example.com',LEGACY_ORIGIN:envBase.PUBLIC_ORIGIN};
+  const mock=paymentMock(),original=globalThis.fetch;globalThis.fetch=mock.fetch;
+  try {
+    const request=new Request(env.PUBLIC_ORIGIN+'/api/book',{method:'POST',headers:{Origin:env.PUBLIC_ORIGIN,'Content-Type':'application/json'},body:JSON.stringify(input([candidates(env)[0].start]))});
+    assert.equal((await worker.fetch(request,env,ctx)).status,400);
+    assert.equal(mock.calls,0);
+    assert.equal(env.DB.raw.prepare('SELECT count(*) n FROM orders').get().n,0);
+  } finally {globalThis.fetch=original;}
+});

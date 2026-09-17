@@ -173,6 +173,15 @@ async function admin(req,env) {
 export default {
   async fetch(req,env,ctx) {
     const url=new URL(req.url);
+    // Move browser visits to the custom domain while keeping Stripe's existing
+    // webhook URL working. A Location without a fragment preserves result tokens.
+    if(env.LEGACY_ORIGIN && url.origin===env.LEGACY_ORIGIN && url.origin!==env.PUBLIC_ORIGIN &&
+       ['GET','HEAD'].includes(req.method) && !url.pathname.startsWith('/api/')) {
+      const destination=new URL(env.PUBLIC_ORIGIN);
+      destination.pathname=url.pathname;
+      destination.search=url.search;
+      return new Response(null,{status:307,headers:{Location:destination.href,'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+    }
     if(!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
     try {
       if(url.pathname==='/api/webhook' && req.method==='POST') return await webhook(req,env,ctx);

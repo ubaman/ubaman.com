@@ -1,6 +1,14 @@
-# Reservas de coaching de Ubaman — versión previa
+# Reservas de coaching de Ubaman
 
-Este proyecto añade un calendario propio con pago alojado en Stripe, correos de confirmación y archivos `.ics`. La web actual conserva Cal.com hasta que se configure, pruebe y active este servicio. No hay cuentas externas ni pagos reales conectados en este borrador.
+Este proyecto añade un calendario propio con pago alojado en Stripe, correos de confirmación y archivos `.ics`. La dirección pública es https://reservas.ubaman.com y el Worker está configurado en modo Stripe `live`.
+
+## Dominio de reservas
+
+- `PUBLIC_ORIGIN` define la dirección pública, los retornos de Checkout y el hostname de Turnstile. El widget debe autorizar `reservas.ubaman.com`.
+- El dominio personalizado está declarado en `wrangler.jsonc`. `run_worker_first` permite redirigir las páginas antes de servir los archivos estáticos.
+- `LEGACY_ORIGIN` conserva temporalmente el dominio anterior. Las visitas GET/HEAD a sus páginas se redirigen al nuevo dominio manteniendo ruta y parámetros. El navegador conserva el fragmento de los enlaces privados de resultado.
+- Los endpoints `/api/*` no se redirigen. El webhook existente de Stripe sigue funcionando en la dirección anterior con verificación de firma. Mantener `workers_dev` activo hasta actualizar el destino en Stripe y comprobar sus entregas.
+- Las nuevas reservas y consultas desde el navegador utilizan el origen público; la migración no amplía los orígenes autorizados ni cambia las claves.
 
 ## Precios y funcionamiento
 
