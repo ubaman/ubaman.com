@@ -1,11 +1,72 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Reserva tu coaching · Ubaman</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head><body>
-<header><a href="https://ubaman.com/">UBAMAN<span>COACHING</span></a><a class="back" href="https://ubaman.com/coach/">← Sobre las sesiones</a></header>
-<main><p class="eyebrow">TU PRÓXIMO NIVEL EMPIEZA AQUÍ</p><h1>Menos dudas.<br><em>Mejores decisiones.</em></h1><p class="intro">Coaching individual de League of Legends. Elige tu plan, reserva tus horarios y trabaja conmigo en sesiones de 60 minutos.</p>
-<p id="notice" role="status">Cargando disponibilidad…</p>
-<form id="booking"><fieldset id="packages"><legend><b>01</b> Elige tu plan</legend><div class="plans">
-<label class="plan"><input type="radio" name="quantity" value="1" checked><span>UNA SESIÓN</span><strong>$40 <small>USD</small></strong><p>60 minutos para trabajar en tu juego.</p></label>
-<label class="plan"><input type="radio" name="quantity" value="3"><span>3 SESIONES · AHORRA 20%</span><strong>$96 <small>USD</small></strong><p><del>$120 USD</del> · $32 USD por sesión.</p></label>
-<label class="plan"><input type="radio" name="quantity" value="5"><span>5 SESIONES · AHORRA 20%</span><strong>$160 <small>USD</small></strong><p><del>$200 USD</del> · $32 USD por sesión.</p></label>
-</div></fieldset>
-<div class="columns"><section><fieldset><legend><b>02</b> Elige tus horarios</legend><p id="timezone"></p><p>Puedes elegir fechas distintas para cada sesión. Cada cita dura una hora.</p><button type="button" id="refresh" class="secondary">Actualizar horarios</button><div id="slots"></div></fieldset></section>
-<aside><h2>Tu reserva</h2><p id="count"></p><ul id="selected"></ul><p class="total" id="total"></p><p id="saving"></p><fieldset><legend><b>03</b> Tus datos</legend><label>Nombre<input name="name" autocomplete="name" required minlength="2" maxlength="100"></label><label>Correo electrónico<input name="email" type="email" autocomplete="email" required maxlength="254"></label></fieldset><p>Recibirás la confirmación y tus citas por correo. El enlace de la llamada se enviará antes de la sesión.</p><div id="challenge"></div><button id="pay" type="submit" disabled>Continuar al pago →</button><p class="fine">Pago único en USD en la página segura de Stripe. Los horarios se confirman después del pago. Tus datos se usan para gestionar las sesiones.</p></aside></div></form></main><footer>UBAMAN · COACHING PERSONALIZADO</footer></body></html>
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#101113">
+  <title>Reserva tu coaching · Ubaman</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/calendar.css?v=20260917">
+  <script type="module" src="/app.js?v=20260917"></script>
+</head>
+<body class="booking-page">
+  <a class="skip-link" href="#booking">Saltar al calendario de reservas</a>
+  <header class="booking-header">
+    <a class="brand" href="https://ubaman.com/" aria-label="Ubaman, inicio"><span class="brand-mark" aria-hidden="true">U<span>↗</span></span><span class="brand-name">UBAMAN<span>COACHING / LOL</span></span></a>
+    <a class="back" href="https://ubaman.com/coach/">← Volver a coaching</a>
+  </header>
+  <main class="booking-main">
+    <section class="booking-intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span aria-hidden="true"></span> TU PRÓXIMA JUGADA</p><h1 id="page-title">Entrena con intención.<br><em>Juega con ventaja.</em></h1><p class="intro">Tu sesión con Ubaman, a tu ritmo. Elige un plan y encuentra el momento para mejorar tu juego.</p></div>
+      <div class="intro-stamp" aria-hidden="true"><span>MENOS AUTOPILOTO</span><strong>MÁS<br>CRITERIO.</strong><span>1 A 1 / 60 MIN</span></div>
+    </section>
+    <form id="booking">
+      <fieldset id="packages" class="package-section" disabled>
+        <legend><b>01</b> Elige tu plan <span>Una inversión en tu juego.</span></legend>
+        <div class="plans">
+          <label class="plan"><input type="radio" name="quantity" value="1" checked><span class="plan-top"><span>SESIÓN INDIVIDUAL</span><span class="plan-check" aria-hidden="true">✓</span></span><strong><span id="price-1">$40</span> <small>USD</small></strong><span class="plan-detail">1 sesión de 60 minutos</span><span class="plan-bottom" id="detail-1">Un objetivo. Un plan de mejora.</span></label>
+          <label class="plan"><input type="radio" name="quantity" value="3"><span class="plan-top"><span>PACK DE 3 SESIONES</span><span class="plan-check" aria-hidden="true">✓</span></span><strong><span id="price-3">$96</span> <small>USD</small><span class="discount" id="discount-3">−20%</span></strong><span class="plan-detail">3 sesiones de 60 minutos</span><span class="plan-bottom" id="detail-3">$32 USD por sesión · Total del paquete</span></label>
+          <label class="plan"><input type="radio" name="quantity" value="5"><span class="plan-top"><span>PACK DE 5 SESIONES</span><span class="plan-check" aria-hidden="true">✓</span></span><strong><span id="price-5">$160</span> <small>USD</small><span class="discount" id="discount-5">−20%</span></strong><span class="plan-detail">5 sesiones de 60 minutos</span><span class="plan-bottom" id="detail-5">$32 USD por sesión · Total del paquete</span></label>
+        </div>
+      </fieldset>
+      <section class="schedule-section" aria-labelledby="schedule-heading">
+        <div class="section-heading"><h2 id="schedule-heading"><b>02</b> Encuentra tu momento</h2><button type="button" id="refresh" class="refresh-button" disabled><span aria-hidden="true">↻</span> Actualizar</button></div>
+        <p id="notice" role="status">Cargando los horarios disponibles…</p>
+        <div class="calendar-shell" id="calendar-shell" aria-busy="true">
+          <section class="coach-panel" aria-labelledby="coach-title">
+            <div class="coach-emblem" aria-hidden="true">U<span>↗</span></div>
+            <p class="eyebrow">SUBE EL NIVEL DE TU JUEGO</p><h3 id="coach-title">Coaching <br>con Ubaman<span>.</span></h3>
+            <p class="coach-copy">Revisamos tu partida, tus decisiones y los detalles que marcan la diferencia.</p>
+            <ul class="session-facts"><li><span aria-hidden="true">◷</span> 60 minutos por sesión</li><li><span aria-hidden="true">◎</span> Atención individual</li><li><span aria-hidden="true">▣</span> Sesión online</li></ul>
+            <div class="zone-control"><label for="timezone">Tus horarios se muestran en</label><select id="timezone" disabled aria-describedby="zone-note"><option>Detectando zona horaria…</option></select><p id="zone-note">Puedes cambiarla sin perder tu selección.</p></div>
+          </section>
+          <section class="month-panel" aria-labelledby="month-title">
+            <div class="month-toolbar"><h3 id="month-title">Cargando calendario</h3><div class="month-arrows"><button type="button" id="prev-month" aria-label="Mes anterior" disabled>‹</button><button type="button" id="next-month" aria-label="Mes siguiente" disabled>›</button></div></div>
+            <p class="calendar-help" id="calendar-help">Selecciona un día para ver sus horarios.</p>
+            <div class="weekdays" aria-hidden="true"><span>DOM</span><span>LUN</span><span>MAR</span><span>MIÉ</span><span>JUE</span><span>VIE</span><span>SÁB</span></div>
+            <div id="calendar-days" class="calendar-days" role="group" aria-labelledby="month-title" aria-describedby="calendar-help"></div>
+            <div class="calendar-key"><span><i class="available-dot"></i>Disponible</span><span><i class="chosen-dot"></i>Con sesión elegida</span></div>
+            <p class="multi-hint" id="multi-hint">Primero el día. Después, tu horario.</p>
+          </section>
+          <section class="time-panel" aria-labelledby="day-title">
+            <div class="time-toolbar"><p class="panel-label">HORARIOS</p><div class="clock-toggle" role="group" aria-label="Formato de hora"><button type="button" data-clock="12" aria-pressed="true">12 h</button><button type="button" data-clock="24" aria-pressed="false">24 h</button></div></div>
+            <h3 id="day-title">Elige un día</h3><p id="time-help" class="time-help">Cada horario es una sesión de 60 min.</p>
+            <div id="slots" class="time-list" aria-busy="true"><p class="empty-slots">Buscando tu próxima sesión…</p></div>
+            <p id="slots-hint" class="slots-hint">La reserva se confirma después del pago.</p>
+          </section>
+        </div>
+      </section>
+      <section class="checkout-section" aria-labelledby="checkout-heading">
+        <div class="section-heading"><h2 id="checkout-heading"><b>03</b> Todo listo para el siguiente nivel</h2></div>
+        <div class="checkout-grid">
+          <section class="selection-panel" aria-labelledby="summary-title"><div class="summary-heading"><h3 id="summary-title">Tu selección</h3><span id="count">0 de 1 sesiones</span></div><div id="selection-progress" class="selection-progress" aria-hidden="true"></div><ul id="selected" class="selected-sessions"></ul><p id="selection-announcement" class="sr-only" role="status"></p><div class="price-summary"><div><span>Total del plan</span><p id="saving">Pago único. Sin suscripción.</p></div><strong id="total">$40 <small>USD</small></strong></div></section>
+          <section class="details-panel" aria-labelledby="details-title"><h3 id="details-title">¿A quién entrenamos?</h3><p class="details-copy">Enviaremos la confirmación y tus citas a este correo.</p><div class="customer-fields"><label for="customer-name">Tu nombre<input id="customer-name" name="name" autocomplete="name" required minlength="2" maxlength="100" placeholder="¿Cómo te llamas?"></label><label for="customer-email">Correo electrónico<input id="customer-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="tu@correo.com"></label></div><div id="challenge"></div><p id="verification-note" class="verification-note" role="status"></p><button id="pay" type="submit" disabled aria-describedby="pay-hint">Continuar al pago <span aria-hidden="true">↗</span></button><p id="pay-hint" class="pay-hint">Elige un horario para continuar.</p><p class="fine">Pago único en USD a través de Stripe. El enlace de la llamada se enviará antes de la sesión. Tus datos se usan para gestionar la reserva.</p></section>
+        </div>
+      </section>
+    </form>
+    <noscript><p class="noscript-message">Activa JavaScript para consultar los horarios y realizar tu reserva.</p></noscript>
+  </main>
+  <footer class="booking-footer"><span>UBAMAN <span>/ COACHING PERSONALIZADO</span></span><span>El siguiente nivel empieza con una decisión.</span></footer>
+</body>
+</html>
