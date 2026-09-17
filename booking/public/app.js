@@ -54,7 +54,7 @@ function renderCalendar() {
   $('multi-hint').textContent = quantity() === 1 ? 'Elige un horario. Si cambias de idea, selecciona otro para reemplazarlo.' : `Puedes repartir tus ${quantity()} sesiones en días distintos. Tu selección se conserva al cambiar de día.`;
 }
 function renderTimes() {
-  $('day-title').textContent = activeDay ? dateLabel(activeDay, {weekday: 'short', day: 'numeric', month: 'short'}) : 'Sin horarios disponibles';
+  $('day-title').textContent = loading ? 'Cargando horarios…' : activeDay ? dateLabel(activeDay, {weekday: 'short', day: 'numeric', month: 'short'}) : 'Sin horarios disponibles';
   const slots = groups.get(activeDay) || [];
   $('time-help').textContent = 'Cada horario es una sesión de 60 min.';
   const fragment = document.createDocumentFragment();
