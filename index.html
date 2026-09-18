@@ -3,235 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07060d">
-  <meta name="description" content="Página oficial de Ubaman: directos, videos, redes sociales y enlaces recomendados.">
-  <meta property="og:title" content="Ubaman — Streamer y creador de contenido">
-  <meta property="og:description" content="Todos los enlaces oficiales de Ubaman en un solo lugar.">
+  <meta name="theme-color" content="#090a10">
+  <meta name="description" content="Ubaman: League of Legends, Wild Rift y comunidad. Mira los directos, descubre la tierlist y mejora con coaching.">
+  <meta property="og:title" content="Ubaman — Nos vemos en la grieta">
+  <meta property="og:description" content="Rankeds, risas y una más. Directos, videos y coaching con Ubaman.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ubaman.com/">
-  <title>Ubaman — Enlaces oficiales</title>
+  <meta property="og:image" content="https://ubaman.com/assets/fondo-pagina.jpg">
+  <title>Ubaman — Nos vemos en la grieta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portal.css?v=20260912-1">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portal.css?v=20260918-1">
+  <script src="/hub.js?v=20260918-1" defer></script>
 </head>
 <body>
-  <div class="page-background" aria-hidden="true"></div>
-
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
-    <a class="wordmark" href="#inicio" aria-label="Ubaman, volver al inicio">
-      <span class="wordmark-icon">U</span>
-      <span><strong>UBAMAN</strong><small>SITIO OFICIAL</small></span>
-    </a>
-    <nav class="topbar-nav" aria-label="Navegación principal">
-      <a href="#sobre-mi">SOBRE MÍ</a>
-      <a href="#directo">DIRECTO</a>
-      <a href="#videos">VIDEOS</a>
-      <a href="/coach/">COACHING</a>
-      <a href="/tierlist/">TIER LIST WR</a>
-      <a href="/esquiva/">JUGAR · ESQUIVA</a>
-      <a href="/links/">ENLACES</a>
-      <button class="share-button" id="share-button" type="button"><span>↗</span> COMPARTIR</button>
-    </nav>
+    <div class="nav-shell">
+      <a class="wordmark" href="/" aria-label="Ubaman, inicio"><span class="wordmark-icon" aria-hidden="true">U</span>UBAMAN<span class="brand-dot" aria-hidden="true">.</span></a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-label">Menú</span><span class="menu-lines" aria-hidden="true"></span></button>
+      <nav id="primary-navigation" class="topbar-nav" aria-label="Navegación principal">
+        <a href="#directo">Directo</a>
+        <a href="#videos">Videos</a>
+        <a href="/tierlist/">Tierlist WR</a>
+        <a href="/esquiva/">Esquiva <span aria-hidden="true">↗</span></a>
+        <a href="/coach/" class="nav-coach">Coaching <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" id="inicio" aria-labelledby="hero-title">
-    <div class="hero-content">
-      <p class="status-line"><span></span> STREAMER MEXICANO · LEAGUE OF LEGENDS</p>
-      <h1 id="hero-title">UBAMAN</h1>
-      <h2>DIRECTOS, VIDEOS Y COMUNIDAD EN UN SOLO LUGAR</h2>
-      <p class="hero-copy">Bienvenido a mi espacio oficial. Aquí encuentras mis transmisiones, contenido, redes y todos los enlaces que recomiendo a la comunidad barbona.</p>
-      <div class="hero-actions">
-        <a class="primary-button" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener"><img src="assets/twitch.svg" alt=""> VER TWITCH</a>
-        <a class="secondary-button" href="/coach/">RESERVAR COACHING</a>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <img class="hero-image" src="/assets/fondo-pagina.jpg" alt="" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content shell">
+        <p class="eyebrow"><span class="small-line" aria-hidden="true"></span> LEAGUE OF LEGENDS / WILD RIFT</p>
+        <h1 id="hero-title">UBAMAN<span>.</span></h1>
+        <p class="hero-tagline">Rankeds, risas <em>y una más.</em></p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener"><img src="/assets/twitch.svg" alt="">Nos vemos en Twitch <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#videos">Ver videos <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube de Ubaman"><img src="/assets/youtube.svg" alt=""></a>
+          <a href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener" aria-label="Instagram de Ubaman"><img src="/assets/instagram.svg" alt=""></a>
+          <a href="https://www.facebook.com/elubaman" target="_blank" rel="noopener" aria-label="Facebook de Ubaman"><img src="/assets/facebook.svg" alt=""></a>
+          <span class="community-note">LA COMUNIDAD BARBONA</span>
+        </div>
       </div>
-      <div class="social-dock" aria-label="Redes sociales">
-        <a class="twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener" aria-label="Twitch"><img src="assets/twitch.svg" alt=""></a>
-        <a class="youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/youtube.svg" alt=""></a>
-        <a class="instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt=""></a>
-        <a class="facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/facebook.svg" alt=""></a>
-      </div>
-    </div>
-    <a class="scroll-cue" href="#directo">DESCUBRE MÁS</a>
-  </section>
+      <div class="hero-caption" aria-hidden="true"><span>EL BARBÓN</span>DE LA GRIETA.</div>
+    </section>
 
-  <main class="content-wrap">
-    <div class="content-inner">
-      <section class="about-section" id="sobre-mi" aria-labelledby="about-title">
-        <div class="about-copy">
-          <p class="section-label">EL BARBÓN DETRÁS DEL CANAL</p>
-          <h2 id="about-title">HOLA, SOY<br><span>UBAMAN</span></h2>
-          <p class="about-lead">Creador de contenido mexicano especializado en League of Legends y Wild Rift.</p>
-          <p>Convierto las partidas, builds, guías y momentos caóticos de las rankeds en videos y directos para una comunidad que viene a aprender, entretenerse y pasarla bien.</p>
-          <div class="about-topics" aria-label="Contenido de Ubaman">
-            <span>LEAGUE OF LEGENDS</span>
-            <span>WILD RIFT</span>
-            <span>DIRECTOS Y VIDEOS</span>
-          </div>
-          <a class="about-button" href="#videos">CONOCE MI CONTENIDO <span>↓</span></a>
-        </div>
-        <figure class="about-photo">
-          <img src="assets/uba%20foto%20estudio.jpg" alt="Ubaman, creador de contenido de League of Legends y Wild Rift" loading="lazy">
-          <figcaption><strong>UBAMAN</strong><span>STREAMER · CREADOR · BARBÓN</span></figcaption>
-        </figure>
-      </section>
-
-      <section class="glass-section" id="directo" aria-labelledby="stream-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">CANAL OFICIAL DE TWITCH</p>
-            <h2 id="stream-title">MÍRAME EN DIRECTO</h2>
-          </div>
-          <a href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">ABRIR EN TWITCH ↗</a>
-        </div>
-        <div class="twitch-player">
-          <iframe
-            src="https://player.twitch.tv/?channel=elubaman&amp;parent=ubaman.com&amp;parent=www.ubaman.com&amp;autoplay=false&amp;muted=true"
-            title="Directo de Ubaman en Twitch"
-            loading="lazy"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-          </iframe>
+    <div class="shell content">
+      <section class="destinations" aria-labelledby="destinations-title">
+        <div class="section-heading compact-heading"><h2 id="destinations-title">TU SIGUIENTE JUGADA</h2><span aria-hidden="true">ELIGE TU MODO ↓</span></div>
+        <div class="destination-grid">
+          <a class="destination-card coaching-card" href="/coach/">
+            <span class="card-top"><span class="card-kicker">CONTIGO, 1 A 1</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="card-art target-art" aria-hidden="true"><i></i><b>+</b></span>
+            <h3>COACHING</h3><p>Sube tu nivel.</p>
+            <span class="card-bottom">60 MIN · $40 USD <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="destination-card tierlist-card" href="/tierlist/" id="tier-list-wr">
+            <span class="card-top"><span class="card-kicker">WILD RIFT</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="card-art rank-art" aria-hidden="true"><i>S</i><i>A</i><i>B</i></span>
+            <h3>TIERLIST</h3><p>Conoce el meta.</p>
+            <span class="card-bottom">EXPLORA LOS CAMPEONES <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="destination-card dodge-card" href="/esquiva/">
+            <span class="card-top"><span class="card-kicker">MINIJUEGO</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="card-art dodge-art" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+            <h3>ESQUIVA</h3><p>Pon a prueba tus reflejos.</p>
+            <span class="card-bottom">JUEGA GRATIS <span aria-hidden="true">→</span></span>
+          </a>
         </div>
       </section>
 
-      <section class="youtube-section" id="videos" aria-labelledby="videos-title">
-        <div class="videos-heading">
-          <div>
-            <p class="section-label">CONTENIDO NUEVO AUTOMÁTICAMENTE</p>
-            <h2 id="videos-title">ÚLTIMOS VIDEOS</h2>
-          </div>
-          <p>Los videos más recientes de mis dos canales, siempre actualizados desde YouTube.</p>
+      <section class="stream-section" id="directo" aria-labelledby="stream-title">
+        <div class="stream-copy">
+          <p class="eyebrow"><img src="/assets/twitch.svg" alt=""> TWITCH / ELUBAMAN</p>
+          <h2 id="stream-title">AQUÍ SE<br>ARMA <em>EL GG.</em></h2>
+          <p>Cáele al chat. La siguiente la ganamos.</p>
+          <a class="text-link" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">Abrir Twitch <span aria-hidden="true">↗</span></a>
         </div>
+        <div class="media-preview stream-preview">
+          <img src="/assets/fondo-pagina.jpg" alt="" loading="lazy">
+          <button class="media-launch" type="button" data-embed-src="https://player.twitch.tv/?channel=elubaman&amp;parent=ubaman.com&amp;autoplay=false" data-embed-title="Canal de Ubaman en Twitch" aria-label="Cargar el reproductor de Twitch">
+            <span class="play-icon" aria-hidden="true">▶</span><span>VER EL CANAL</span>
+          </button>
+          <noscript><a class="media-fallback" href="https://www.twitch.tv/elubaman">Ver en Twitch ↗</a></noscript>
+        </div>
+      </section>
 
-        <div class="youtube-grid">
-          <article class="youtube-channel">
-            <div class="channel-heading">
-              <span class="channel-mark"><img src="assets/youtube.svg" alt=""></span>
-              <span>
-                <small>LEAGUE OF LEGENDS · PC</small>
-                <strong>UBAMAN</strong>
-              </span>
-              <a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">VER CANAL ↗</a>
+      <section class="videos-section" id="videos" aria-labelledby="videos-title">
+        <div class="section-heading"><div><p class="eyebrow">DALE PLAY</p><h2 id="videos-title">FUERA DEL DIRECTO.</h2></div><span class="section-note">DOS CANALES. EL MISMO BARBÓN.</span></div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="media-preview lol-preview">
+              <span class="video-art" aria-hidden="true">LOL<span>PC</span></span>
+              <button class="media-launch" type="button" data-embed-src="https://www.youtube-nocookie.com/embed/videoseries?list=UUxqDIXlqSU1ksBuIJNk3Aog&amp;autoplay=1" data-embed-title="Últimos videos de Ubaman — League of Legends" aria-label="Reproducir videos de League of Legends"><span class="play-icon" aria-hidden="true">▶</span><span>VER VIDEOS</span></button>
+              <noscript><a class="media-fallback" href="https://www.youtube.com/@Ubaman">Ver en YouTube ↗</a></noscript>
             </div>
-            <div class="youtube-player">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/videoseries?list=UUxqDIXlqSU1ksBuIJNk3Aog"
-                title="Últimos videos de Ubaman en League of Legends para PC"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-            </div>
+            <div class="video-caption"><div><h3>UBAMAN</h3><p>League of Legends</p></div><a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Abrir el canal de YouTube de Ubaman">VER CANAL <span aria-hidden="true">↗</span></a></div>
           </article>
-
-          <article class="youtube-channel mobile-channel">
-            <div class="channel-heading">
-              <span class="channel-mark"><img src="assets/youtube.svg" alt=""></span>
-              <span>
-                <small>WILD RIFT · MOBILE</small>
-                <strong>UBAMAN MOBILE</strong>
-              </span>
-              <a href="https://www.youtube.com/@UbamanMobile?sub_confirmation=1" target="_blank" rel="noopener">VER CANAL ↗</a>
+          <article class="video-card">
+            <div class="media-preview wr-preview">
+              <span class="video-art" aria-hidden="true">WILD<span>RIFT</span></span>
+              <button class="media-launch" type="button" data-embed-src="https://www.youtube-nocookie.com/embed/videoseries?list=UUcNeqZPuICtkxje5ZKR_VbA&amp;autoplay=1" data-embed-title="Últimos videos de Ubaman Mobile — Wild Rift" aria-label="Reproducir videos de Wild Rift"><span class="play-icon" aria-hidden="true">▶</span><span>VER VIDEOS</span></button>
+              <noscript><a class="media-fallback" href="https://www.youtube.com/@UbamanMobile">Ver en YouTube ↗</a></noscript>
             </div>
-            <div class="youtube-player">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/videoseries?list=UUcNeqZPuICtkxje5ZKR_VbA"
-                title="Últimos videos de Ubaman Mobile en Wild Rift"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-            </div>
+            <div class="video-caption"><div><h3>UBAMAN MOBILE</h3><p>Wild Rift</p></div><a href="https://www.youtube.com/@UbamanMobile?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Abrir el canal de YouTube de Ubaman Mobile">VER CANAL <span aria-hidden="true">↗</span></a></div>
           </article>
-        </div>
-      </section>
-
-      <section class="glass-section meta-spotlight" id="tier-list-wr" aria-labelledby="meta-title">
-        <div class="meta-copy">
-          <p class="section-label">LIGA SOBERANO · PARCHE 7.2e</p>
-          <h2 id="meta-title">TIER LIST<br><span>WILD RIFT</span></h2>
-          <p>Consulta los campeones más fuertes de cada posición, sus porcentajes de victoria, selección y bloqueo.</p>
-          <div class="meta-patches" aria-label="Estado de parches">
-            <span><small>VIGENTE</small><strong>7.2e</strong></span>
-            <span><small>VISTA PREVIA</small><strong>7.3</strong></span>
-          </div>
-        </div>
-        <div class="meta-ranking">
-          <p>TOP DEL META</p>
-          <strong>AMUMU · SYNDRA · SONA</strong>
-          <small>Datos exclusivos de liga Soberano del servidor chino, organizados para la comunidad de Ubaman.</small>
-          <a class="primary-button" href="/tierlist/">VER TIER LIST COMPLETA <span>→</span></a>
-        </div>
-      </section>
-
-<section class="glass-section meta-spotlight" aria-labelledby="dodge-title">
-<div class="meta-copy"><p class="section-label">EL RETO DE REFLEJOS DE UBAMAN</p><h2 id="dodge-title">¿PUEDES<br><span>ESQUIVARLO?</span></h2><p>Seis ataques inspirados en LoL. Tres vidas. Muévete, lee las señales y supera tu récord en nuestra arena de habilidad.</p></div>
-<div class="meta-ranking"><p>GRATIS · PC Y CELULAR</p><strong>ENTRENA TUS DODGES</strong><small>Láser, gancho, flechas, meteorito, orbe y tornado. Practica uno a uno o enfréntate a todos.</small><a class="primary-button" href="/esquiva/">JUGAR AHORA <span>→</span></a></div></section>
-
-      <section class="links-section" id="enlaces" aria-labelledby="links-title">
-        <div class="links-header">
-          <h2 id="links-title">TODOS MIS ENLACES</h2>
-          <p>Contenido, redes, productos y colaboraciones oficiales seleccionadas por Ubaman.</p>
-        </div>
-        <div class="bento-grid">
-          <a class="link-tile wide tile-twitch" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon"><img src="assets/twitch.svg" alt=""></span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>TWITCH · DIRECTOS</strong><small>Entra al stream y únete a la comunidad</small></span>
-          </a>
-          <a class="link-tile tile-youtube" href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon"><img src="assets/youtube.svg" alt=""></span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>YOUTUBE</strong><small>Videos, guías y contenido</small></span>
-          </a>
-          <a class="link-tile tile-instagram" href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon"><img src="assets/instagram.svg" alt=""></span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>INSTAGRAM</strong><small>Clips y contenido detrás de cámaras</small></span>
-          </a>
-          <a class="link-tile tile-facebook" href="https://www.facebook.com/elubaman" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon"><img src="assets/facebook.svg" alt=""></span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>FACEBOOK</strong><small>Videos y novedades</small></span>
-          </a>
-          <a class="link-tile wide tile-bonoxs" href="https://bonoxs.com/?utm_campaign=influ-Ubaman-league_of_legends--Jul2026&amp;utm_medium=influ-instagram&amp;utm_source=influencers" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon text">RP</span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>OBTÉN TU RP EN BONOXS</strong><small>Recargas y tarjetas para tus juegos</small></span>
-          </a>
-          <a class="link-tile wide tile-game" href="https://dls.igg.com/event/giveaway/?key=es/Ubaman" target="_blank" rel="noopener">
-            <span class="tile-top"><span class="tile-icon text">DLS</span><span class="tile-arrow">↗</span></span>
-            <span class="tile-copy"><strong>DOOMSDAY × UBAMAN</strong><small>Página oficial de la colaboración</small></span>
-          </a>
         </div>
       </section>
     </div>
   </main>
 
-
-  <aside class="coach-promo" id="coach-promo" aria-labelledby="coach-promo-title">
-    <button class="promo-close" id="promo-close" type="button" aria-label="Cerrar promoción">×</button>
-    <div class="promo-badge" aria-label="50 por ciento de descuento">
-      <strong>50%</strong>
-      <span>DESCUENTO</span>
-    </div>
-    <div class="promo-copy">
-      <p>OFERTA DE LANZAMIENTO</p>
-      <h2 id="coach-promo-title">COACHING 1 A 1</h2>
-      <div class="promo-details">
-        <span class="promo-price"><del>$80 USD</del><strong>$40 USD</strong></span>
-        <span class="promo-countdown">
-          <small>TERMINA EN</small>
-          <strong id="coach-timer" role="timer" aria-atomic="true">20:00</strong>
-        </span>
-      </div>
-      <a href="/coach/">APROVECHAR DESCUENTO <span>→</span></a>
-    </div>
-  </aside>
-
-  <footer>
-    <p>© <span id="year"></span> UBAMAN · TODOS LOS ENLACES OFICIALES</p>
-    <span id="share-status" role="status" aria-live="polite"></span>
+  <footer class="shell footer">
+    <a class="wordmark" href="#inicio" aria-label="Ubaman, volver arriba">UBAMAN<span class="brand-dot" aria-hidden="true">.</span></a>
+    <p>© <span id="year">2026</span> UBAMAN</p>
+    <div class="footer-actions"><button id="share-button" type="button">Compartir <span aria-hidden="true">↗</span></button><a href="#inicio" aria-label="Volver arriba">↑</a></div>
+    <span id="share-status" class="share-status" role="status" aria-live="polite"></span>
   </footer>
-
-  <script src="hub.js?v=20260905-2"></script>
 </body>
 </html>
