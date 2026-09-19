@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08060e">
-  <meta name="description" content="Reserva una sesión individual de coaching de League of Legends con Ubaman. 60 minutos, análisis personalizado y seguimiento por Google Meet.">
-  <meta property="og:title" content="Coaching con Ubaman — 60 minutos">
-  <meta property="og:description" content="Analiza tu partida, detecta errores y recibe un plan claro para mejorar en League of Legends.">
+  <meta name="theme-color" content="#090a10">
+  <meta name="description" content="Coaching 1 a 1 de League of Legends con Ubaman. Sesiones de 60 minutos desde 40 USD. Elige tu paquete, consulta horarios y reserva online.">
+  <meta property="og:title" content="Coaching con Ubaman — Tu próxima buena play empieza aquí">
+  <meta property="og:description" content="Tu partida, tus decisiones y un plan para mejorar. Coaching 1 a 1: 40 USD por sesión, 3 por 96 USD o 5 por 160 USD.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ubaman.com/coach/">
   <meta property="og:image" content="https://ubaman.com/assets/uba%20foto%20estudio.jpg">
@@ -14,112 +14,83 @@
   <title>Coaching con Ubaman — League of Legends</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/coach/styles.css?v=20260905-2">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/coach/styles.css?v=20260919-1">
+  <script src="/coach/coach.js?v=20260919-1" defer></script>
 </head>
 <body>
-  <div class="ambient" aria-hidden="true"></div>
-
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
-    <a class="brand" href="/" aria-label="Volver al sitio oficial de Ubaman">
-      <span>U</span>
-      <strong>UBAMAN<small>COACHING</small></strong>
-    </a>
-    <nav aria-label="Navegación">
-      <a href="/">INICIO</a>
-      <a href="/links/">ENLACES</a>
-      <a class="nav-cta" href="https://reservas.ubaman.com/">RESERVAR</a>
-    </nav>
+    <div class="shell nav-shell">
+      <a class="back-link" href="/"><span aria-hidden="true">←</span> Inicio</a>
+      <nav class="section-links" aria-label="Secciones de coaching"><a href="#sesion">La sesión</a><a href="#planes">Paquetes</a><a href="#dudas">Dudas</a></nav>
+      <a class="button nav-cta" href="https://reservas.ubaman.com/">Reservar <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="contenido">
+    <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> COACHING INDIVIDUAL · LEAGUE OF LEGENDS</p>
-        <h1>DEJA DE JUGAR<br><em>EN AUTOMÁTICO</em></h1>
-        <p class="lead">Una sesión directa y personalizada para entender qué te está frenando y salir con decisiones concretas para tus próximas partidas.</p>
-
-        <div class="discount-banner" role="note" aria-label="Oferta de lanzamiento: 50 por ciento de descuento">
-          <span>OFERTA DE LANZAMIENTO</span>
-          <strong>50% DE DESCUENTO</strong>
-          <small>Precio especial aplicado al reservar</small>
-        </div>
-
-        <div class="offer">
-          <div><strong>60</strong><small>MINUTOS 1 A 1</small></div>
-          <div class="offer-price"><del>$80 USD</del><strong>$40</strong><small>USD · PRECIO FINAL</small></div>
-          <div><strong>EN VIVO</strong><small>POR GOOGLE MEET</small></div>
-        </div>
-
-        <a class="primary-cta" href="https://reservas.ubaman.com/">
-          ELEGIR HORARIO Y RESERVAR <span>→</span>
-        </a>
-        <p class="payment-note">Eliges tu horario y completas el pago seguro con Stripe dentro de la reserva.</p>
-        <p class="availability"><i></i> Máximo 3 sesiones por día · Agenda disponible con 14 días de anticipación</p>
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> LEAGUE OF LEGENDS · COACHING 1 A 1</p>
+        <h1 id="hero-title">MENOS<br>AUTOPILOTO.<br><em>MÁS CRITERIO.</em></h1>
+        <p class="hero-lead">Juega con intención. <strong>Mejora conmigo.</strong></p>
+        <p class="hero-description">Revisamos tu partida y convertimos tus errores en un plan para la siguiente ranked.</p>
+        <div class="hero-price"><strong>$40 <small>USD</small></strong><span>60 minutos<br>Solo tú y Ubaman.</span></div>
+        <div class="hero-actions"><a class="button primary" href="https://reservas.ubaman.com/">Reservar mi sesión <span aria-hidden="true">↗</span></a><a class="text-link" href="#planes">Ver paquetes <span aria-hidden="true">↓</span></a></div>
+        <p class="trust-line"><span aria-hidden="true">✓</span> Horarios en tu zona <span aria-hidden="true">·</span> Pago seguro con Stripe</p>
       </div>
-
-      <figure class="coach-card">
-        <div class="photo-wrap">
-          <img src="/assets/uba%20foto%20estudio.jpg" alt="Ubaman, coach y creador de contenido de League of Legends">
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="/assets/uba%20foto%20estudio.jpg" alt="Ubaman, tu coach de League of Legends" fetchpriority="high">
+          <div class="portrait-shade" aria-hidden="true"></div>
+          <span class="portrait-top">EL BARBÓN, EN TU EQUIPO <span aria-hidden="true">↗</span></span>
+          <figcaption><span>STREAMER / JUGADOR / TU COACH</span><strong>UBAMAN<span>.</span></strong></figcaption>
         </div>
-        <figcaption>
-          <span>UBAMAN</span>
-          <strong>CREADOR · JUGADOR · COACH</strong>
-        </figcaption>
+        <div class="session-badge"><span class="badge-icon" aria-hidden="true">+</span><span><strong>UNA PARTIDA.<br>OTRA PERSPECTIVA.</strong><small>Análisis personalizado, en vivo.</small></span></div>
+        <span class="portrait-code" aria-hidden="true">PLAYER 02: TÚ &nbsp; / &nbsp; COACHING MODE</span>
       </figure>
     </section>
 
-    <section class="value-section" aria-labelledby="includes-title">
-      <div class="section-heading">
-        <p class="eyebrow"><span></span> UNA HORA BIEN APROVECHADA</p>
-        <h2 id="includes-title">¿QUÉ VAMOS A TRABAJAR?</h2>
-      </div>
-      <div class="value-grid">
-        <article>
-          <span>01</span>
-          <h3>ANÁLISIS DE PARTIDA</h3>
-          <p>Revisamos una partida tuya para identificar hábitos, errores y oportunidades que no ves mientras juegas.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>DECISIONES Y MACRO</h3>
-          <p>Objetivos, rotaciones, visión y toma de decisiones explicados con ejemplos claros de tu propia partida.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>PLAN PARA MEJORAR</h3>
-          <p>Terminas con prioridades concretas para practicar, en lugar de una lista interminable de consejos genéricos.</p>
-        </article>
+    <div class="session-strip"><div class="shell"><span><b>01</b> TU PARTIDA</span><span aria-hidden="true">→</span><span><b>02</b> TUS DECISIONES</span><span aria-hidden="true">→</span><span><b>03</b> TU PLAN</span></div></div>
+
+    <section class="session-section shell reveal" id="sesion" aria-labelledby="session-title">
+      <div class="section-intro"><p class="eyebrow">NO ES OTRA GUÍA GENÉRICA</p><h2 id="session-title">VAMOS A VER<br><em>TU JUEGO.</em></h2><p>Una hora enfocada en lo que necesitas trabajar.</p><span class="section-hint">EXPLORA LA SESIÓN <span aria-hidden="true">↘</span></span></div>
+      <div class="focus-list">
+        <details name="session-focus" open><summary><span class="step-number">01</span><span>Detecta tus errores</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="focus-content"><p>Revisamos tu partida para encontrar las decisiones y hábitos que te están frenando.</p><div class="topic-tags"><span>Análisis de partida</span><span>Prioridades</span></div></div></details>
+        <details name="session-focus"><summary><span class="step-number">02</span><span>Entiende el mapa</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="focus-content"><p>Visión, objetivos y rotaciones. Entiende qué hacer y por qué, con ejemplos de tu propio juego.</p><div class="topic-tags"><span>Macro</span><span>Visión</span><span>Decisiones</span></div></div></details>
+        <details name="session-focus"><summary><span class="step-number">03</span><span>Sal con un plan</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="focus-content"><p>Te llevas prioridades concretas para practicar en tus siguientes partidas.</p><div class="topic-tags"><span>Hábitos</span><span>Práctica</span></div></div></details>
       </div>
     </section>
 
-    <section class="steps-section" aria-labelledby="steps-title">
-      <div class="steps-copy">
-        <p class="eyebrow"><span></span> SIMPLE Y SEGURO</p>
-        <h2 id="steps-title">ASÍ FUNCIONA</h2>
-        <p>No necesitas escribir antes ni coordinar horarios por mensajes.</p>
+    <section class="plans-section" id="planes" aria-labelledby="plans-title">
+      <div class="shell">
+        <div class="section-heading reveal"><div><p class="eyebrow">A TU RITMO</p><h2 id="plans-title">ELIGE CÓMO<br><em>QUIERES MEJORAR.</em></h2></div><p>Siempre 1 a 1.<br>Siempre 60 minutos por sesión.</p></div>
+        <div class="plans-grid">
+          <article class="plan reveal" aria-labelledby="single-title"><div class="plan-top"><span class="plan-index">01</span><span class="plan-label">PRIMER PASO</span></div><h3 id="single-title">UNA SESIÓN</h3><p class="plan-description">Enfócate en un objetivo.</p><p class="plan-price">$40 <span>USD</span></p><p class="per-session">1 sesión de 60 minutos</p><div class="plan-bottom"><span>Análisis + plan de mejora</span><span aria-hidden="true">↗</span></div></article>
+          <article class="plan plan-featured reveal" aria-labelledby="three-title"><div class="plan-top"><span class="plan-index">03</span><span class="saving">AHORRA 20%</span></div><h3 id="three-title">TRES SESIONES</h3><p class="plan-description">Dale continuidad a tu práctica.</p><p class="plan-price">$96 <span>USD</span></p><p class="per-session">$32 USD por sesión · 3 × 60 min</p><div class="plan-bottom"><span>Ahorra $24 USD frente a 3 sueltas</span><span aria-hidden="true">↗</span></div></article>
+          <article class="plan reveal" aria-labelledby="five-title"><div class="plan-top"><span class="plan-index">05</span><span class="saving">AHORRA 20%</span></div><h3 id="five-title">CINCO SESIONES</h3><p class="plan-description">Más espacio para trabajar tu juego.</p><p class="plan-price">$160 <span>USD</span></p><p class="per-session">$32 USD por sesión · 5 × 60 min</p><div class="plan-bottom"><span>Ahorra $40 USD frente a 5 sueltas</span><span aria-hidden="true">↗</span></div></article>
+        </div>
+        <div class="plans-booking reveal"><a class="button primary" href="https://reservas.ubaman.com/">Elegir paquete y horarios <span aria-hidden="true">↗</span></a><p>Seleccionas tu plan y todas tus fechas en el calendario.<br>Pago único en USD. Sin suscripción.</p></div>
       </div>
-      <ol>
-        <li><b>1</b><span><strong>ELIGE TU HORARIO</strong><small>La agenda muestra únicamente los espacios que tengo disponibles.</small></span></li>
-        <li><b>2</b><span><strong>COMPLETA EL PAGO</strong><small>Tu lugar queda confirmado al pagar de forma segura con Stripe.</small></span></li>
-        <li><b>3</b><span><strong>RECIBE TU ENLACE</strong><small>La confirmación y los archivos para añadir tus sesiones al calendario llegan automáticamente a tu correo.</small></span></li>
-      </ol>
     </section>
 
-    <section class="final-cta">
-      <p class="eyebrow">¿LISTO PARA SUBIR DE NIVEL?</p>
-      <h2>RESERVA TU<br><em>SESIÓN 1 A 1</em></h2>
-      <p class="final-discount">50% DE DESCUENTO · <del>ANTES $80 USD</del></p>
-      <p class="final-price">$40 <span>USD</span></p>
-      <p class="final-details">60 minutos · Sesión individual · Google Meet</p>
-      <a class="primary-cta" href="https://reservas.ubaman.com/">VER HORARIOS DISPONIBLES <span>→</span></a>
-      <small>Los horarios se muestran en tu zona horaria automáticamente.</small>
+    <section class="booking-steps shell reveal" aria-labelledby="steps-title">
+      <div class="section-heading"><div><p class="eyebrow">DEL CLICK A LA SESIÓN</p><h2 id="steps-title">ASÍ DE FÁCIL.</h2></div></div>
+      <ol><li><span>1</span><div><h3>Elige plan y fechas</h3><p>Consulta los horarios disponibles.</p></div></li><li><span>2</span><div><h3>Confirma tu reserva</h3><p>Completa el pago seguro con Stripe.</p></div></li><li><span>3</span><div><h3>Nos vemos en sesión</h3><p>Confirmación por correo y enlace de llamada antes de la sesión.</p></div></li></ol>
     </section>
+
+    <section class="faq-section shell reveal" id="dudas" aria-labelledby="faq-title">
+      <div class="section-intro"><p class="eyebrow">ANTES DE ENTRAR</p><h2 id="faq-title">¿ALGUNA<br><em>DUDA?</em></h2></div>
+      <div class="faq-list">
+        <details><summary>¿Qué incluye cada sesión?<span class="expand-icon" aria-hidden="true"></span></summary><p>60 minutos individuales conmigo: análisis de tu partida, decisiones y un plan de mejora enfocado en tu juego.</p></details>
+        <details><summary>¿Cómo elijo los horarios?<span class="expand-icon" aria-hidden="true"></span></summary><p>El calendario muestra disponibilidad en tu zona horaria. En los paquetes eliges un horario por sesión antes de pagar; puedes repartirlas en distintos días.</p></details>
+        <details><summary>¿Dónde será la llamada?<span class="expand-icon" aria-hidden="true"></span></summary><p>La sesión es online por Google Meet. Recibes la confirmación de la reserva por correo; el enlace de la llamada se envía antes de la sesión.</p></details>
+        <details><summary>¿Y si necesito cambiar mi reserva?<span class="expand-icon" aria-hidden="true"></span></summary><p>Escríbeme a <a href="mailto:ubamancontacto@gmail.com">ubamancontacto@gmail.com</a> para coordinarlo. Los cambios se gestionan por correo.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta shell reveal" aria-labelledby="final-title"><div><p class="eyebrow">TU SIGUIENTE RANKED, CON UN PLAN</p><h2 id="final-title">NOS VEMOS<br><em>EN LA GRIETA.</em></h2></div><div class="final-action"><a class="button primary" href="https://reservas.ubaman.com/">Ver horarios disponibles <span aria-hidden="true">↗</span></a><p>Desde $40 USD · 60 min · 1 a 1</p></div></section>
   </main>
-
-  <footer>
-    <a href="/">UBAMAN.COM</a>
-    <span>© 2026 · COACHING OFICIAL</span>
-  </footer>
+  <footer class="shell footer"><a href="/">← Volver a ubaman.com</a><span>© <span id="year">2026</span> · COACHING CON UBAMAN</span></footer>
 </body>
 </html>
