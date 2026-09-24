@@ -140,3 +140,38 @@ footer a:hover { color: var(--cyan); }
   *,*::before,*::after { animation: none !important; transition: none !important; }
   .ambient-background { transform: none !important; }
 }
+
+/* Featured collaboration: warm gold separates the campaign from social links. */
+.collaboration-label { color: #f5d88a; }
+.link-card.mlbb {
+  --brand: #ffda82;
+  min-height: 178px;
+  grid-template-columns: 68px minmax(0,1fr) 24px;
+  gap: 20px;
+  padding: 25px;
+  border: 1px solid #f6d27ca6;
+  background: radial-gradient(ellipse at 0 0,#224f6c88,transparent 65%),linear-gradient(125deg,#111e31,#171221 75%,#3b2b18);
+  box-shadow: 0 0 22px #ffcf6533,inset 0 0 28px #f6d27c08;
+}
+.link-card.mlbb::before { inset: 0; width: auto; background: linear-gradient(110deg,transparent 30%,#fff2bf20 48%,transparent 66%); box-shadow:none; transform:translateX(-120%); animation: mlbb-shine 4.5s ease-in-out 2; pointer-events:none; }
+.link-card.mlbb::after { width:180px; height:180px; top:-100px; right:-60px; background:#ffda82; opacity:.2; pointer-events:none; }
+.mlbb-emblem { position:relative; z-index:1; display:grid; place-content:center; width:68px; height:78px; border:1px solid #f6d27c70; border-radius:16px 4px; color:#ffe5a7; background:linear-gradient(145deg,#ffe5a714,#ffe5a704); font:400 31px/.9 var(--display); text-align:center; letter-spacing:2px; transform:rotate(-5deg); }
+.mlbb-emblem span { color:#87ddff; }
+.mlbb-tag { display:block; margin-bottom:9px; font-size:9px; font-weight:800; line-height:1.5; letter-spacing:1.2px; color:#ffe3a3; }
+.mlbb .link-copy strong { font-size:34px; letter-spacing:1px; color:#fff8e8; }
+.mlbb .link-copy small { white-space:normal; overflow:visible; color:#c3cedd; font-size:10px; line-height:1.6; margin-top:8px; }
+.mlbb-cta { display:inline-flex; gap:22px; align-items:center; padding:9px 14px; margin-top:15px; border-radius:7px; background:linear-gradient(105deg,#ffe8ae,#efbf59); color:#221a0c; font-size:10px; font-weight:800; letter-spacing:.7px; }
+.mlbb-cta span { font-size:18px; line-height:1; }
+.mlbb-star { align-self:start; color:#ffe3a3; font-size:24px; text-shadow:0 0 16px #ffd46a; }
+.link-card.mlbb:hover,.link-card.mlbb:focus-visible { border-color:#ffebb8; box-shadow:0 0 36px #ffcf6550,inset 0 0 28px #f6d27c12; }
+a:focus-visible,button:focus-visible { outline:3px solid #ffe3a3; outline-offset:4px; }
+@keyframes mlbb-shine { 0%{transform:translateX(-120%)} 65%,100%{transform:translateX(120%)} }
+@media(max-width:520px) {
+  .profile { padding-top:26px; padding-bottom:18px; }
+  .link-card.mlbb { min-height:170px; grid-template-columns:48px minmax(0,1fr); gap:14px; padding:19px 15px; }
+  .mlbb-emblem { width:48px; height:65px; font-size:26px; }
+  .mlbb-tag { font-size:8px; letter-spacing:.7px; }
+  .mlbb .link-copy strong { font-size:28px; }
+  .mlbb-star { display:none; }
+}
+@media(prefers-reduced-motion:reduce) { .link-card.mlbb::before { animation:none; } }
