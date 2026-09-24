@@ -25,7 +25,7 @@ a:focus-visible, button:focus-visible, iframe:focus-visible { outline: 3px solid
 .skip-link:focus { transform: none; }
 .topbar { position: sticky; top: 0; z-index: 30; background: rgba(9,10,16,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
 .nav-shell { width: min(1280px, calc(100% - 64px)); min-height: 82px; margin-inline: auto; display: flex; justify-content: center; align-items: center; gap: 0; }
-.topbar-nav { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); width: min(100%,1100px); gap: 12px; padding-block: 14px; }
+.topbar-nav { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); width: min(100%,1100px); gap: 12px; padding-block: 14px; }
 .topbar-nav a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 16px; border: 1px solid transparent; border-radius: 7px; background: var(--cyan); color: #08161d; font-size: 16px; font-weight: 800; transition: background .2s, transform .2s, box-shadow .2s; }
 .topbar-nav a:hover { color: #08161d; background: #b4f5ff; transform: translateY(-2px); box-shadow: 0 5px 20px #7ceaff25; }
 .topbar-nav .nav-coach { background: #c3afff; color: #1a1230; }
