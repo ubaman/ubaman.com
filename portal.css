@@ -28,8 +28,6 @@ a:focus-visible, button:focus-visible, iframe:focus-visible { outline: 3px solid
 .topbar-nav { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); width: min(100%,1100px); gap: 12px; padding-block: 14px; }
 .topbar-nav a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 16px; border: 1px solid transparent; border-radius: 7px; background: var(--cyan); color: #08161d; font-size: 16px; font-weight: 800; transition: background .2s, transform .2s, box-shadow .2s; }
 .topbar-nav a:hover { color: #08161d; background: #b4f5ff; transform: translateY(-2px); box-shadow: 0 5px 20px #7ceaff25; }
-.topbar-nav .nav-coach { background: #c3afff; color: #1a1230; }
-.topbar-nav .nav-coach:hover { background: #ded2ff; color: #1a1230; }
 .menu-toggle { display: none; }
 .hero { position: relative; isolation: isolate; min-height: 590px; display: flex; align-items: center; overflow: hidden; }
 .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
@@ -174,4 +172,52 @@ a:focus-visible, button:focus-visible, iframe:focus-visible { outline: 3px solid
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Luminous gaming navigation, with a distinct accent for each destination. */
+.topbar { background:linear-gradient(110deg,#0c1426f5,#141025f5 65%,#0a1422f5); border-bottom-color:#8baeff33; box-shadow:0 8px 35px #0005; }
+.topbar-nav a,.topbar.menu-ready .menu-toggle {
+  --nav-accent:#59deff; --nav-deep:#153c68;
+  position:relative; isolation:isolate; overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--nav-accent) 65%,transparent);
+  border-radius:12px 4px 12px 4px;
+  color:#fff;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--nav-accent) 26%,#13213a),var(--nav-deep) 58%,#141427);
+  box-shadow:inset 0 1px 0 #ffffff38,inset 0 -2px 0 #0004,0 0 13px color-mix(in srgb,var(--nav-accent) 15%,transparent);
+  text-shadow:0 1px 5px #0008;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,filter .22s ease;
+}
+.topbar-nav a[href="#directo"] { --nav-accent:#c295ff; --nav-deep:#53318b; }
+.topbar-nav a[href="#videos"] { --nav-accent:#ff93b1; --nav-deep:#762e56; }
+.topbar-nav a[href="/links/"] { --nav-accent:#ffc76b; --nav-deep:#745024; }
+.topbar-nav a[href="/tierlist/"] { --nav-accent:#66f3db; --nav-deep:#145a57; }
+.topbar-nav a[href="/esquiva/"] { --nav-accent:#8ca8ff; --nav-deep:#343b85; }
+.topbar-nav .nav-coach { --nav-accent:#e5aeff; --nav-deep:#733aa3; }
+.topbar-nav a::before,.topbar.menu-ready .menu-toggle::before {
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(110deg,transparent 30%,#ffffff30 48%,transparent 65%);
+  transform:translateX(-130%); pointer-events:none;
+}
+.topbar-nav a::after {
+  content:""; position:absolute; left:28%; right:28%; bottom:0; height:2px;
+  background:var(--nav-accent); box-shadow:0 -1px 10px var(--nav-accent);
+  transition:left .22s ease,right .22s ease; pointer-events:none;
+}
+.topbar-nav a:hover,.topbar-nav a:focus-visible,.topbar.menu-ready .menu-toggle:hover {
+  color:#fff;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--nav-accent) 38%,#13213a),var(--nav-deep) 58%,#141427);
+  border-color:var(--nav-accent); transform:translateY(-3px);
+  box-shadow:inset 0 1px 0 #ffffff55,0 6px 24px color-mix(in srgb,var(--nav-accent) 32%,transparent);
+}
+.topbar-nav a:hover::before,.topbar-nav a:focus-visible::before,.topbar.menu-ready .menu-toggle:hover::before { animation:nav-sheen .65s ease-out; }
+.topbar-nav a:hover::after,.topbar-nav a:focus-visible::after { left:12%;right:12%; }
+.topbar-nav a:active,.topbar.menu-ready .menu-toggle:active { transform:translateY(1px) scale(.97); filter:brightness(1.2); }
+@keyframes nav-sheen { to{transform:translateX(130%)} }
+@media(max-width:900px) {
+  .topbar.menu-ready .menu-toggle { border-radius:10px; }
+  .topbar.menu-open .topbar-nav { background:linear-gradient(145deg,#101b2cfc,#1a102cfc); }
+  .topbar-nav .nav-coach { grid-column:1/-1; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .topbar-nav a:hover,.topbar-nav a:focus-visible,.topbar-nav a:active,.topbar.menu-ready .menu-toggle:hover,.topbar.menu-ready .menu-toggle:active { transform:none; }
 }
