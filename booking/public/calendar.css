@@ -193,3 +193,38 @@
 .booking-page #notice{color:#c5c6d6}
 .booking-page .pay-hint{color:var(--muted)}
 .booking-page ::selection{background:var(--cyan);color:#08161d}
+
+/* Compact booking introduction with the existing studio portrait. */
+.booking-page .booking-intro{margin-bottom:26px;gap:30px}
+.booking-page .intro-copy{flex:1;min-width:0}
+.booking-page h1{font-size:clamp(32px,4vw,50px);margin-bottom:12px}
+.booking-page .intro{font-size:14px;max-width:450px}
+.booking-page .session-chip{display:inline-block;margin-top:14px;color:var(--purple);font-size:12px}
+.booking-page .coach-portrait{position:relative;flex:0 0 190px;height:190px;margin:0 24px 0 0;border:1px solid #c3afff66;border-radius:18px 6px 18px 6px;overflow:hidden;background:#171422;transform:rotate(2deg);box-shadow:0 12px 35px #0004}
+.booking-page .coach-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.booking-page .coach-portrait figcaption{position:absolute;bottom:0;left:0;right:0;padding:26px 15px 12px;background:linear-gradient(transparent,#090a10e8);font-size:13px;font-weight:800;letter-spacing:1px}
+.booking-page .coach-portrait figcaption span{float:right;color:var(--cyan)}
+.booking-page .coach-panel h3{font-size:22px;margin-bottom:20px}
+.booking-page .session-facts{margin-bottom:20px}
+.booking-page .brand-mark{display:none}
+@media(max-width:1090px){
+ .booking-page .coach-panel{grid-template-columns:1fr 250px;gap:8px 24px}
+ .booking-page .coach-panel h3{grid-column:1;grid-row:1;margin:0;font-size:18px}
+ .booking-page .session-facts{grid-column:1;grid-row:2;margin:0}
+ .booking-page .zone-control{grid-column:2;grid-row:1/3}
+}
+@media(max-width:600px){
+ .booking-page .booking-main{padding-top:26px}
+ .booking-page .booking-intro{gap:14px;align-items:flex-start}
+ .booking-page .booking-intro .eyebrow{font-size:8px;letter-spacing:.7px;line-height:1.6;margin-bottom:12px}
+ .booking-page h1{font-size:31px;letter-spacing:-1px}
+ .booking-page .intro{font-size:12px}
+ .booking-page .session-chip{font-size:10px;margin-top:10px}
+ .booking-page .coach-portrait{flex-basis:88px;height:116px;margin:18px 0 0;border-radius:12px 4px;transform:none}
+ .booking-page .coach-portrait figcaption{font-size:9px;padding:20px 8px 8px}
+ .booking-page .coach-panel{grid-template-columns:1fr;padding:18px 22px;gap:12px}
+ .booking-page .coach-panel h3{grid-column:1;grid-row:1;font-size:18px}
+ .booking-page .session-facts{grid-column:1;grid-row:2;justify-content:flex-start;gap:12px;font-size:10px}
+ .booking-page .zone-control{grid-column:1;grid-row:3;margin:0}
+}
+@media(max-width:360px){.booking-page h1{font-size:27px}.booking-page .coach-portrait{flex-basis:72px;height:104px}.booking-page .booking-intro{gap:10px}}
