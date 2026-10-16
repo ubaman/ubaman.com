@@ -4,58 +4,79 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090a10">
-  <meta name="description" content="Ubaman: League of Legends, Wild Rift y comunidad. Mira los directos, descubre la tierlist y mejora con coaching.">
-  <meta property="og:title" content="Ubaman — Nos vemos en la grieta">
-  <meta property="og:description" content="Rankeds, risas y una más. Directos, videos y coaching con Ubaman.">
+  <meta name="description" content="Coaching de League of Legends con Ubaman. Sesiones online 1 a 1 de 60 minutos: análisis de tu partida y un plan para mejorar. Reserva desde $40 USD.">
+  <meta property="og:title" content="Coaching de League of Legends con Ubaman">
+  <meta property="og:description" content="Revisamos tu partida, detectamos tus errores y definimos qué practicar. Sesiones 1 a 1 de 60 minutos desde $40 USD.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ubaman.com/">
   <meta property="og:image" content="https://ubaman.com/assets/fondo-pagina.jpg">
-  <title>Ubaman — Nos vemos en la grieta</title>
+  <title>Coaching de League of Legends con Ubaman · Sesiones 1 a 1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/portal.css?v=20260924-2">
+  <link rel="stylesheet" href="/coaching-home.css?v=20261015-1">
+  <link rel="canonical" href="https://ubaman.com/">
   <script src="/hub.js?v=20260918-1" defer></script>
 </head>
-<body>
+<body class="coaching-home">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="nav-shell">
       <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-label">Menú</span><span class="menu-lines" aria-hidden="true"></span></button>
       <nav id="primary-navigation" class="topbar-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
+        <a href="#sesiones">Las sesiones</a>
+        <a href="#paquetes">Precios</a>
         <a href="#directo">Directo</a>
         <a href="#videos">Videos</a>
         <a href="/links/">Redes</a>
-        <a href="/tierlist/">Tierlist WR</a>
-        <a href="/esquiva/">Esquiva <span aria-hidden="true">↗</span></a>
-        <a href="https://reservas.ubaman.com/" class="nav-coach">Coaching <span aria-hidden="true">↗</span></a>
+        <a href="https://reservas.ubaman.com/" class="nav-coach">Reservar <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="contenido">
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <img class="hero-image" src="/assets/fondo-pagina.jpg" alt="" fetchpriority="high">
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-content shell">
-        <p class="eyebrow"><span class="small-line" aria-hidden="true"></span> LEAGUE OF LEGENDS / WILD RIFT</p>
-        <h1 id="hero-title">UBAMAN<span>.</span></h1>
-        <p class="hero-tagline">Rankeds, risas <em>y una más.</em></p>
+    <section class="coach-hero shell" id="inicio" aria-labelledby="hero-title">
+      <div class="coach-copy">
+        <p class="eyebrow">LEAGUE OF LEGENDS · COACHING 1 A 1</p>
+        <h1 id="hero-title">MEJORA TU JUEGO.<br><em>ENTRENA CONMIGO.</em></h1>
+        <p class="coach-intro">Soy Ubaman. Revisamos tu partida juntos para entender tus errores y saber qué practicar en tu siguiente ranked.</p>
+        <p class="coach-facts">60 minutos · Online · Atención individual</p>
+        <div class="coach-price"><strong>$40 <small>USD</small></strong><span>por sesión individual</span></div>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://www.twitch.tv/elubaman" target="_blank" rel="noopener"><img src="/assets/twitch.svg" alt="">Nos vemos en Twitch <span aria-hidden="true">↗</span></a>
-          <a class="button button-quiet" href="#videos">Ver videos <span aria-hidden="true">↓</span></a>
-          <a class="button button-quiet" href="/links/">Redes y enlaces <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="https://reservas.ubaman.com/">Reservar mi sesión <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#sesiones">Qué incluye <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="socials" aria-label="Redes sociales">
-          <a href="https://www.youtube.com/@Ubaman?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube de Ubaman"><img src="/assets/youtube.svg" alt=""></a>
-          <a href="https://www.instagram.com/elubaman/" target="_blank" rel="noopener" aria-label="Instagram de Ubaman"><img src="/assets/instagram.svg" alt=""></a>
-          <a href="https://www.facebook.com/elubaman" target="_blank" rel="noopener" aria-label="Facebook de Ubaman"><img src="/assets/facebook.svg" alt=""></a>
-          <span class="community-note">LA COMUNIDAD BARBONA</span>
-        </div>
+        <p class="coach-note">Elige tu horario y reserva online.</p>
       </div>
-      <div class="hero-caption" aria-hidden="true"><span>EL BARBÓN</span>DE LA GRIETA.</div>
+      <figure class="coach-portrait">
+        <img src="/assets/uba%20foto%20estudio.jpg" alt="Ubaman, tu coach de League of Legends" fetchpriority="high">
+        <figcaption><span>TU PARTIDA. TUS DECISIONES. TU PLAN.</span><strong>UBAMAN<span>.</span></strong></figcaption>
+      </figure>
     </section>
+
+    <section class="coach-section shell" id="sesiones" aria-labelledby="session-title">
+      <div class="section-heading"><div><p class="eyebrow">UNA HORA CENTRADA EN TI</p><h2 id="session-title">¿QUÉ HAREMOS EN TU SESIÓN?</h2></div></div>
+      <div class="coach-benefits">
+        <article><span class="step-label">01 / ANALIZAMOS</span><h3>Revisamos tu partida</h3><p>Vemos tus decisiones y detectamos los errores que se repiten en tu juego.</p></article>
+        <article><span class="step-label">02 / ENTENDEMOS</span><h3>Sabes qué cambiar</h3><p>Trabajamos el mapa, la visión y los objetivos con ejemplos de tu propia partida.</p></article>
+        <article><span class="step-label">03 / PRACTICAS</span><h3>Te llevas un plan</h3><p>Sales con prioridades concretas para practicar en tus siguientes partidas.</p></article>
+      </div>
+    </section>
+
+    <section class="coach-section coach-packages shell" id="paquetes" aria-labelledby="packages-title">
+      <div class="section-heading"><div><p class="eyebrow">ELIGE TU SIGUIENTE PASO</p><h2 id="packages-title">TUS SESIONES DE COACHING.</h2></div><p>Siempre conmigo, 1 a 1.<br>60 minutos por sesión.</p></div>
+      <div class="coach-plans">
+        <article class="coach-plan"><span class="step-label">PARA EMPEZAR</span><h3>1 sesión</h3><p>Trabaja un objetivo concreto.</p><p class="package-price">$40 <span>USD</span></p><p class="package-detail">Una sesión de 60 minutos.</p><a class="button button-quiet" href="https://reservas.ubaman.com/">Reservar una sesión <span aria-hidden="true">↗</span></a></article>
+        <article class="coach-plan coach-plan-accent"><span class="step-label">AHORRA 20%</span><h3>3 sesiones</h3><p>Dale continuidad a tu práctica.</p><p class="package-price">$96 <span>USD</span></p><p class="package-detail">Total del paquete · $32 USD por sesión.</p><a class="button button-primary" href="https://reservas.ubaman.com/">Ver horarios y paquetes <span aria-hidden="true">↗</span></a></article>
+        <article class="coach-plan"><span class="step-label">AHORRA 20%</span><h3>5 sesiones</h3><p>Dedica más tiempo a trabajar tu juego.</p><p class="package-price">$160 <span>USD</span></p><p class="package-detail">Total del paquete · $32 USD por sesión.</p><a class="button button-quiet" href="https://reservas.ubaman.com/">Ver horarios y paquetes <span aria-hidden="true">↗</span></a></article>
+      </div>
+      <p class="coach-payment">Pago único en USD. Sin suscripción. Elige tu paquete y las fechas en la página de reservas.</p>
+      <div class="coach-booking-note"><div><h3>Así de sencillo.</h3><p>Elige paquete y horario → confirma tu reserva → nos vemos online.</p></div><a class="text-link" href="/coach/">Más sobre las sesiones y dudas frecuentes <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <div class="community-heading shell"><p class="eyebrow">TAMBIÉN NOS VEMOS EN DIRECTO</p><h2>LA COMUNIDAD BARBONA.</h2><div class="community-links"><a href="/tierlist/">Tierlist Wild Rift ↗</a><a href="/esquiva/">Jugar Esquiva ↗</a><a href="/links/">Todas mis redes ↗</a></div></div>
 
     <div class="shell content">
       <section class="stream-section" id="directo" aria-labelledby="stream-title">
