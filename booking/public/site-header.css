@@ -1,0 +1,51 @@
+/* Menú común a todas las páginas de ubaman.com (también se copia en booking/public).
+   Los selectores llevan .site-header delante para no heredar los estilos de header/nav de cada página. */
+.site-header {
+  --sh-bg: rgba(26,26,29,.96);
+  --sh-panel: #232326;
+  --sh-text: #F2F0F0;
+  --sh-muted: #CFCDCF;
+  --sh-line: rgba(78,78,80,.65);
+  --sh-accent: #C3073F;
+  --sh-accent-hover: #D91E55;
+  --sh-accent-text: #F0547D;
+  position: sticky; top: 0; z-index: 40; display: block; max-width: none; margin: 0; padding: 0;
+  background: var(--sh-bg); border-bottom: 1px solid var(--sh-line); backdrop-filter: blur(14px);
+  color: var(--sh-text); font-family: "Manrope", system-ui, sans-serif; font-size: 14px; line-height: 1.4; letter-spacing: normal; text-align: left;
+}
+.site-header * { box-sizing: border-box; }
+.site-header span { display: inline; font-size: inherit; letter-spacing: inherit; color: inherit; }
+.site-header .sh-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(1240px, calc(100% - 40px)); min-height: 72px; margin: 0 auto; padding: 0; }
+.site-header .sh-brand { flex: none; margin: 0; padding: 0; color: var(--sh-text); font: 400 30px/1 "Bebas Neue", Impact, sans-serif; letter-spacing: 1px; text-decoration: none; }
+.site-header .sh-brand span { color: var(--sh-accent); }
+.site-header .sh-brand:hover { color: var(--sh-accent-text); }
+.site-header .sh-nav { display: flex; flex-wrap: nowrap; align-items: center; gap: 2px; margin: 0; padding: 0; font-size: 14px; font-weight: 700; letter-spacing: normal; }
+.site-header .sh-nav a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 11px; border-radius: 4px; color: var(--sh-muted); font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.site-header .sh-nav a:hover, .site-header .sh-nav a:focus-visible { color: var(--sh-accent-text); }
+.site-header .sh-nav a[aria-current="page"] { color: var(--sh-accent-text); }
+.site-header .sh-nav .sh-cta { margin-left: 10px; padding: 0 18px; background: var(--sh-accent); color: #fff; font-weight: 800; }
+.site-header .sh-nav .sh-cta:hover, .site-header .sh-nav .sh-cta:focus-visible { background: var(--sh-accent-hover); color: #fff; }
+.site-header a:focus-visible, .site-header button:focus-visible { outline: 3px solid var(--sh-accent-text); outline-offset: 3px; }
+.site-header .sh-toggle { display: none; }
+@media (max-width: 1100px) {
+  .site-header .sh-nav a { padding: 0 8px; font-size: 13px; }
+  .site-header .sh-nav .sh-cta { margin-left: 4px; padding: 0 14px; }
+}
+@media (max-width: 960px) {
+  .site-header .sh-inner { min-height: 64px; }
+  .site-header .sh-brand { font-size: 28px; }
+  .site-header.sh-ready .sh-toggle { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; margin: 0; padding: 0 16px; border: 1px solid var(--sh-line); border-radius: 6px; background: var(--sh-panel); color: var(--sh-text); font: 800 15px "Manrope", system-ui, sans-serif; cursor: pointer; }
+  .site-header .sh-lines, .site-header .sh-lines::after { display: block; width: 17px; height: 2px; background: currentColor; transition: transform .2s; }
+  .site-header .sh-lines { transform: translateY(-3px); }
+  .site-header .sh-lines::after { content: ""; transform: translateY(6px); }
+  .site-header.sh-open .sh-lines { transform: rotate(45deg); }
+  .site-header.sh-open .sh-lines::after { transform: rotate(-90deg); }
+  /* Sin JavaScript el menú se muestra en varias líneas; con JavaScript se pliega en un desplegable. */
+  .site-header .sh-nav { flex-wrap: wrap; }
+  .site-header.sh-ready .sh-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px 20px 20px; background: rgba(20,20,23,.98); border-bottom: 1px solid var(--sh-line); box-shadow: 0 25px 40px rgba(0,0,0,.5); max-height: calc(100dvh - 64px); overflow-y: auto; }
+  .site-header.sh-ready.sh-open .sh-nav { display: grid; }
+  .site-header.sh-ready .sh-nav a { justify-content: center; min-height: 50px; padding: 0 10px; background: var(--sh-panel); border: 1px solid var(--sh-line); font-size: 15px; }
+  .site-header.sh-ready .sh-nav .sh-cta { grid-column: 1 / -1; margin: 0; background: var(--sh-accent); border-color: var(--sh-accent); }
+}
+@media (prefers-reduced-motion: reduce) { .site-header .sh-lines, .site-header .sh-lines::after { transition: none; } }
+.site-header .sh-nav .sh-cta[aria-current="page"] { color: #fff; }

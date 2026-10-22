@@ -9,13 +9,28 @@
   <link rel="stylesheet" href="/style.css?v=20261022-crimson-1">
   <link rel="stylesheet" href="/calendar.css?v=20261022-crimson-1">
   <script type="module" src="/app.js?v=20260917b"></script>
-  <link rel="stylesheet" href="/footer.css?v=20261022-2">
+  <link rel="stylesheet" href="/footer.css?v=20261022-3">
+  <link rel="stylesheet" href="/site-header.css?v=20261022-1">
+  <script src="/site-header.js?v=20261022-1" defer></script>
 </head>
 <body class="booking-page">
   <a class="skip-link" href="#booking">Saltar al calendario de reservas</a>
-  <header class="booking-header">
-    <a class="brand" href="https://ubaman.com/" aria-label="Ubaman, inicio"><span class="brand-mark" aria-hidden="true">U<span>↗</span></span><span class="brand-name">UBAMAN<span>COACHING / LOL</span></span></a>
-    <a class="back" href="https://ubaman.com/">← Volver al inicio</a>
+  <header class="site-header">
+    <div class="sh-inner">
+      <a class="sh-brand" href="https://ubaman.com/" aria-label="Ubaman, ir al inicio">UBAMAN<span aria-hidden="true">.</span></a>
+      <button class="sh-toggle" type="button" aria-expanded="false" aria-controls="sh-nav" hidden><span class="sh-label">Menú</span><span class="sh-lines" aria-hidden="true"></span></button>
+      <nav class="sh-nav" id="sh-nav" aria-label="Navegación principal">
+        <a href="https://ubaman.com/">Inicio</a>
+        <a href="https://ubaman.com/coach/">Coaching</a>
+        <a href="https://ubaman.com/sobre-mi/">Sobre mí</a>
+        <a href="https://ubaman.com/#directo">Directo</a>
+        <a href="https://ubaman.com/#videos">Videos</a>
+        <a href="https://ubaman.com/calendario/">Calendario</a>
+        <a href="https://ubaman.com/tierlist/">Tier list</a>
+        <a href="https://ubaman.com/links/">Redes</a>
+        <a class="sh-cta" href="https://reservas.ubaman.com/" aria-current="page">Reservar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
   <main class="booking-main">
     <section class="booking-intro" aria-labelledby="page-title">

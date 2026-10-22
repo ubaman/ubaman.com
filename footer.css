@@ -42,3 +42,4 @@
 .sf-mail svg { flex: none; width: 18px; height: 18px; }
 .sf-legal { display: flex; flex-wrap: wrap; gap: 18px; }
 .sf-legal a { font-size: 12px; }
+.site-footer .sf-col { display: block; }

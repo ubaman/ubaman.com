@@ -15,22 +15,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/tierlist/styles.css?v=20261022-crimson-1">
-  <link rel="stylesheet" href="/footer.css?v=20261022-2">
+  <link rel="stylesheet" href="/footer.css?v=20261022-3">
+  <link rel="stylesheet" href="/site-header.css?v=20261022-1">
+  <script src="/site-header.js?v=20261022-1" defer></script>
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="Volver al sitio de Ubaman">
-      <span>U</span>
-      <strong>UBAMAN<small>WILD RIFT META</small></strong>
-    </a>
-    <nav aria-label="Navegación">
-      <a href="/">INICIO</a>
-      <a href="/calendario/">CALENDARIO</a>
-      <a href="/coach/">COACHING</a>
-      <a href="/links/">ENLACES</a>
-    </nav>
+  <header class="site-header">
+    <div class="sh-inner">
+      <a class="sh-brand" href="/" aria-label="Ubaman, ir al inicio">UBAMAN<span aria-hidden="true">.</span></a>
+      <button class="sh-toggle" type="button" aria-expanded="false" aria-controls="sh-nav" hidden><span class="sh-label">Menú</span><span class="sh-lines" aria-hidden="true"></span></button>
+      <nav class="sh-nav" id="sh-nav" aria-label="Navegación principal">
+        <a href="/">Inicio</a>
+        <a href="/coach/">Coaching</a>
+        <a href="/sobre-mi/">Sobre mí</a>
+        <a href="/#directo">Directo</a>
+        <a href="/#videos">Videos</a>
+        <a href="/calendario/">Calendario</a>
+        <a href="/tierlist/" aria-current="page">Tier list</a>
+        <a href="/links/">Redes</a>
+        <a class="sh-cta" href="https://reservas.ubaman.com/">Reservar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main>

@@ -16,17 +16,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/calendario/styles.css?v=20261022-6">
   <script src="/calendario/app.js?v=20261022-7" defer></script>
-  <link rel="stylesheet" href="/footer.css?v=20261022-2">
+  <link rel="stylesheet" href="/footer.css?v=20261022-3">
+  <link rel="stylesheet" href="/site-header.css?v=20261022-1">
+  <script src="/site-header.js?v=20261022-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#calendario">Saltar al calendario</a>
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="Ubaman, ir al inicio">UBAMAN<span aria-hidden="true">.</span></a>
-    <nav aria-label="Navegación">
-      <a href="/">Inicio</a>
-      <a href="/tierlist/">Tier list WR</a>
-      <a href="/coach/">Coaching</a>
-    </nav>
+  <header class="site-header">
+    <div class="sh-inner">
+      <a class="sh-brand" href="/" aria-label="Ubaman, ir al inicio">UBAMAN<span aria-hidden="true">.</span></a>
+      <button class="sh-toggle" type="button" aria-expanded="false" aria-controls="sh-nav" hidden><span class="sh-label">Menú</span><span class="sh-lines" aria-hidden="true"></span></button>
+      <nav class="sh-nav" id="sh-nav" aria-label="Navegación principal">
+        <a href="/">Inicio</a>
+        <a href="/coach/">Coaching</a>
+        <a href="/sobre-mi/">Sobre mí</a>
+        <a href="/#directo">Directo</a>
+        <a href="/#videos">Videos</a>
+        <a href="/calendario/" aria-current="page">Calendario</a>
+        <a href="/tierlist/">Tier list</a>
+        <a href="/links/">Redes</a>
+        <a class="sh-cta" href="https://reservas.ubaman.com/">Reservar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main id="calendario">
