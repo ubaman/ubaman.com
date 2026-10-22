@@ -1,18 +1,23 @@
-/* Graphite, ivory and muted gold: homepage-only visual identity. */
+/* Dark graphite with crimson accents: homepage-only visual identity. */
 .coaching-home {
- --bg:#202226;
- --panel:#292C31;
- --panel-hover:#34373C;
- --white:#F2EFE9;
- --muted:#B5B1AA;
- --text-secondary:#D0CBC2;
- --accent:#B49A68;
- --accent-hover:#C5AE82;
- --ink:#202226;
+ --bg:#1A1A1D;
+ --panel:#232326;
+ --panel-hover:#2E2E31;
+ --white:#F2F0F0;
+ --muted:#A9A8AB;
+ --text-secondary:#CFCDCF;
+ --gray:#4E4E50;
+ --wine:#6F2232;
+ --crimson:#950740;
+ --accent:#C3073F;
+ --accent-hover:#D91E55;
+ /* Lighter crimson keeps small text on the dark background legible. */
+ --accent-text:#F0547D;
+ --ink:#FFFFFF;
  /* Shared portal styles inherit the homepage palette. */
- --cyan:var(--accent);
- --purple:var(--accent);
- --line:rgba(242,239,233,.15);
+ --cyan:var(--accent-text);
+ --purple:var(--accent-text);
+ --line:rgba(78,78,80,.65);
  background:var(--bg);
 }
 /* Coaching-first homepage; existing community sections retain portal.css. */
@@ -36,7 +41,7 @@
 .coach-copy .hero-actions { margin-top:22px; }
 .coach-note { color:var(--muted); font-size:12px; margin-top:16px; }
 .coach-portrait { position:relative; margin:0; height:530px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--panel); }
-.coach-portrait::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(32,34,38,.94),transparent 55%); pointer-events:none; }
+.coach-portrait::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(26,26,29,.94),transparent 55%); pointer-events:none; }
 .coach-portrait > img { width:100%; height:100%; object-fit:cover; object-position:center 35%; }
 .coach-portrait figcaption { position:absolute; bottom:28px; left:28px; right:20px; z-index:1; }
 .coach-portrait figcaption > span { font-size:10px; font-weight:800; letter-spacing:1.5px; line-height:1.7; }
@@ -112,7 +117,7 @@
 @media(prefers-reduced-motion:reduce) { .coaching-offer { animation:none; } }
 
 /* Restrained navigation and bold editorial accents. */
-.coaching-home .topbar { background:rgba(32,34,38,.97); border-bottom:1px solid var(--line); box-shadow:none; }
+.coaching-home .topbar { background:rgba(26,26,29,.97); border-bottom:1px solid var(--line); box-shadow:none; }
 .coaching-home .topbar-nav a,
 .coaching-home .topbar.menu-ready .menu-toggle { --nav-accent:var(--accent); --nav-deep:var(--panel); background:var(--panel); border:1px solid var(--line); border-radius:4px; box-shadow:none; color:var(--white); text-shadow:none; }
 .coaching-home .topbar-nav a::before,
@@ -123,7 +128,7 @@
 .coaching-home .topbar.menu-ready .menu-toggle:hover { background:var(--panel-hover); border-color:var(--accent); color:var(--accent); box-shadow:none; transform:none; }
 .coaching-home .topbar-nav .nav-coach { background:var(--accent); border-color:var(--accent); color:var(--bg); }
 .coaching-home .topbar-nav .nav-coach:hover { background:var(--accent-hover); color:var(--bg); }
-.coaching-home .topbar.menu-open .topbar-nav { background:rgba(32,34,38,.98); }
+.coaching-home .topbar.menu-open .topbar-nav { background:rgba(26,26,29,.98); }
 .coach-copy .eyebrow::before { content:""; width:24px; height:4px; background:var(--accent); flex-shrink:0; }
 .coach-copy h1 { letter-spacing:-.5px; }
 .coach-facts { border-left:3px solid var(--accent); padding-left:13px; }
@@ -142,7 +147,7 @@
 .coach-plan-accent .step-label { background:var(--accent); color:var(--bg); padding:6px 9px; border-radius:2px; }
 .coach-booking-note { border-left:3px solid var(--accent); padding-left:20px; }
 .coaching-home .media-preview { border-radius:4px; background:var(--panel); border-color:var(--line); }
-.coaching-home .play-icon { background:rgba(32,34,38,.85); border-color:var(--accent); color:var(--accent); }
+.coaching-home .play-icon { background:rgba(26,26,29,.85); border-color:var(--accent); color:var(--accent); }
 .coaching-home .media-launch:hover .play-icon { background:var(--accent); color:var(--bg); border-color:var(--accent); }
 .coaching-home .media-frame { background:var(--bg); }
 .coaching-home .lol-preview,.coaching-home .wr-preview { background:var(--panel); }
@@ -207,9 +212,41 @@
 /* Carry the neutral palette through shared media and mobile navigation. */
 .coaching-home .eyebrow { color:var(--accent); }
 .coaching-home .coach-copy h1 em { color:var(--white); }
-.coaching-home .media-launch { background:rgba(32,34,38,.2); }
+.coaching-home .media-launch { background:rgba(26,26,29,.2); }
 .coaching-home .button:hover { transform:none; }
 .coaching-home .offer-close { color:var(--white); }
 .coaching-home .offer-close:hover { background:var(--panel-hover); }
 .coaching-home .topbar-nav .nav-coach:focus-visible { background:var(--accent-hover); color:var(--ink); }
 .coaching-home .footer-actions > a:hover { border-color:var(--accent); }
+
+/* Crimson fills use the base accent; text on them stays white. */
+.coaching-home .button-primary,
+.coaching-home .offer-cta,
+.coaching-home .topbar-nav .nav-coach,
+.coaching-home .topbar.menu-open .topbar-nav .nav-coach { background:var(--accent); border-color:var(--accent); color:var(--ink); }
+.coaching-home .button-primary:hover,
+.coaching-home .offer-cta:hover,
+.coaching-home .topbar-nav .nav-coach:hover,
+.coaching-home .topbar-nav .nav-coach:focus-visible { background:var(--accent-hover); color:var(--ink); }
+.coaching-home .coach-plan-accent .step-label,
+.coaching-home .media-launch:hover .play-icon { color:var(--ink); }
+.coaching-home .coach-copy h1 em,
+.coaching-home .coaching-offer h2 strong,
+.coaching-home .coach-portrait strong span { color:var(--accent-text); }
+.coaching-home .offer-eyebrow,
+.coaching-home .coach-cta .eyebrow { color:var(--accent-text); }
+.coaching-home .coach-chips li::before,
+.coaching-home .coach-copy .eyebrow::before { background:var(--accent); }
+.coaching-home .coach-facts,
+.coaching-home .coach-booking-note { border-left-color:var(--crimson); }
+.coaching-home .coach-benefits article { border-top-color:var(--crimson); }
+.coaching-home .coach-portrait { border-bottom:3px solid var(--accent); }
+.coaching-home .coach-plan-accent { background:linear-gradient(160deg,rgba(111,34,50,.45),var(--panel) 65%); border-color:var(--accent); border-top:3px solid var(--accent); }
+.coaching-home .coach-cta { background:linear-gradient(110deg,rgba(111,34,50,.55),var(--panel) 70%); border-color:var(--gray); border-left:3px solid var(--accent); }
+.coaching-home .coaching-offer { border-color:var(--crimson); border-top:3px solid var(--accent); }
+.coaching-home .play-icon { border-color:var(--accent); color:var(--accent-text); }
+.coaching-home .stream-preview { border-color:var(--gray); }
+.coaching-home ::selection { background:var(--accent); color:var(--ink); }
+.coaching-home a:focus-visible,
+.coaching-home button:focus-visible,
+.coaching-home iframe:focus-visible { outline-color:var(--accent-text); }
