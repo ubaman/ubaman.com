@@ -30,7 +30,6 @@
             <span class="stats">
               <span>WR<strong>${champion.win.toFixed(2)}%</strong></span>
               <span>PICK<strong>${champion.pick.toFixed(2)}%</strong></span>
-              <span>BAN<strong>${champion.ban.toFixed(2)}%</strong></span>
             </span>
           </article>`).join('')}
         </div>

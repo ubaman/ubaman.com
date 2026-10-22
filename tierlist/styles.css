@@ -8,3 +8,6 @@
 /* Crimson palette: fills use the base accent; tiers step down through the palette. */
 .role-tabs button:hover,.role-tabs button.active,.source-section a{background:#C3073F;border-color:#C3073F;color:#fff}.preview-label{background:#C3073F;color:#fff}
 .tier-rank{color:#fff}.tier-row[data-tier="S+"] .tier-rank{background:linear-gradient(145deg,#F0547D,#C3073F)}.tier-row[data-tier="S"] .tier-rank{background:#C3073F}.tier-row[data-tier="A"] .tier-rank{background:#950740}.tier-row[data-tier="B"] .tier-rank{background:#6F2232}.tier-row[data-tier="C"] .tier-rank{background:#4E4E50}.tier-row[data-tier="D"] .tier-rank{background:#36363A}
+
+/* Soberano 7.3c: the source has no ban rate, so cards show WR and Pick only. */
+.stats{grid-template-columns:repeat(2,1fr)}
