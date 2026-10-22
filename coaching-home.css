@@ -27,8 +27,8 @@
 .coaching-home .coach-hero { display:grid; grid-template-columns:1.15fr 1fr; gap:50px; align-items:center; padding-block:64px 72px; }
 .coach-copy { min-width:0; }
 .coach-copy .eyebrow { color:var(--cyan); font-size:11px; letter-spacing:1.5px; line-height:1.8; }
-.coach-copy h1 { font:400 clamp(48px,5.3vw,76px)/1.02 var(--display); margin:0 0 22px; }
-.coach-copy h1 em { font-style:normal; color:var(--cyan); }
+.coach-copy .coach-title { font:400 clamp(48px,5.3vw,76px)/1.02 var(--display); margin:0 0 22px; }
+.coach-copy .coach-title em { font-style:normal; color:var(--cyan); }
 .coach-intro { max-width:500px; font-size:17px; line-height:1.8; color:var(--text-secondary); margin:0 0 22px; }
 .coach-facts { font-size:13px; line-height:1.7; font-weight:700; color:var(--white); }
 .coach-price { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-top:24px; }
@@ -79,7 +79,7 @@
 }
 @media(max-width:700px) {
  .coaching-home .coach-hero { grid-template-columns:1fr; padding-block:40px; gap:30px; }
- .coach-copy h1 { font-size:clamp(42px,10vw,64px); }
+ .coach-copy .coach-title { font-size:clamp(42px,10vw,64px); }
  .coach-intro { font-size:16px; }
  .coach-portrait { height:350px; }
  .coach-portrait > img { object-position:center 30%; }
@@ -130,7 +130,7 @@
 .coaching-home .topbar-nav .nav-coach:hover { background:var(--accent-hover); color:var(--bg); }
 .coaching-home .topbar.menu-open .topbar-nav { background:rgba(26,26,29,.98); }
 .coach-copy .eyebrow::before { content:""; width:24px; height:4px; background:var(--accent); flex-shrink:0; }
-.coach-copy h1 { letter-spacing:-.5px; }
+.coach-copy .coach-title { letter-spacing:-.5px; }
 .coach-facts { border-left:3px solid var(--accent); padding-left:13px; }
 .coaching-home .button { border-radius:4px; }
 .coaching-home .button-primary { box-shadow:none; }
@@ -170,7 +170,7 @@
 .coaching-home .topbar-nav a:focus-visible { background:transparent; border-color:transparent; color:var(--cyan); }
 .coaching-home .topbar-nav .nav-coach { margin-left:14px; padding-inline:22px; background:var(--cyan); border-color:var(--cyan); color:var(--bg); font-weight:800; }
 .coaching-home .coach-hero { padding-block:72px 80px; }
-.coach-copy h1 { font-size:clamp(54px,6.2vw,92px); line-height:.98; }
+.coach-copy .coach-title { font-size:clamp(54px,6.2vw,92px); line-height:.98; }
 .coach-chips { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
 .coach-chips li { display:inline-flex; align-items:center; gap:9px; padding:9px 13px; background:var(--panel); border:1px solid var(--line); border-radius:4px; color:var(--white); font-size:13px; font-weight:700; }
 .coach-chips li::before { content:""; width:6px; height:6px; background:var(--accent); }
@@ -195,7 +195,7 @@
 }
 @media(max-width:700px) {
  .coaching-home .coach-hero { padding-block:36px 40px; }
- .coach-copy h1 { font-size:clamp(46px,13vw,64px); }
+ .coach-copy .coach-title { font-size:clamp(46px,13vw,64px); }
  .coach-cta { flex-direction:column; align-items:stretch; padding:28px 22px; margin-bottom:48px; }
 }
 /* On phones the offer becomes a slim bar so it never hides the content. */
@@ -211,7 +211,7 @@
 
 /* Carry the neutral palette through shared media and mobile navigation. */
 .coaching-home .eyebrow { color:var(--accent); }
-.coaching-home .coach-copy h1 em { color:var(--white); }
+.coaching-home .coach-copy .coach-title em { color:var(--white); }
 .coaching-home .media-launch { background:rgba(26,26,29,.2); }
 .coaching-home .button:hover { transform:none; }
 .coaching-home .offer-close { color:var(--white); }
@@ -230,7 +230,7 @@
 .coaching-home .topbar-nav .nav-coach:focus-visible { background:var(--accent-hover); color:var(--ink); }
 .coaching-home .coach-plan-accent .step-label,
 .coaching-home .media-launch:hover .play-icon { color:var(--ink); }
-.coaching-home .coach-copy h1 em,
+.coaching-home .coach-copy .coach-title em,
 .coaching-home .coaching-offer h2 strong,
 .coaching-home .coach-portrait strong span { color:var(--accent-text); }
 .coaching-home .offer-eyebrow,
@@ -268,3 +268,37 @@
 .coaching-home .topbar-nav a[aria-current="page"] { color:var(--accent-text); }
 .about-page .coach-about { border-top:0; padding-block:80px 56px; }
 @media(max-width:700px) { .about-page .coach-about { padding-block:40px 32px; } }
+
+/* Profile hero: avatar, name, tagline and social icons on a plain background. */
+.profile-hero { display:flex; flex-direction:column; align-items:center; text-align:center; padding:72px 20px 64px; background:radial-gradient(ellipse at 50% 30%,rgba(195,7,63,.16),transparent 60%); border-bottom:1px solid var(--line); }
+.profile-avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--wine),0 0 40px rgba(195,7,63,.35); }
+.profile-name { margin:26px 0 6px; font:400 clamp(56px,8vw,88px)/.95 var(--display); letter-spacing:2px; }
+.profile-tagline { margin:0; color:var(--text-secondary); font-size:17px; font-weight:600; }
+.profile-socials { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin:30px 0 0; padding:0; list-style:none; }
+.profile-socials a { display:grid; place-items:center; width:52px; height:52px; border-radius:10px; background:#2A2A2E; color:var(--white); transition:background .2s,color .2s,transform .2s; }
+.profile-socials svg { width:24px; height:24px; }
+.profile-socials a:hover,.profile-socials a:focus-visible { background:var(--accent); color:#fff; transform:translateY(-2px); }
+
+/* "Mis directos": one player with a Twitch / Kick switch. */
+.live-section { padding-block:56px; border-bottom:1px solid var(--line); scroll-margin-top:20px; }
+.live-head { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:22px; }
+.live-head h2 { margin:0; font:400 clamp(36px,4.4vw,56px)/1 var(--display); }
+.live-head h2 em { font-style:normal; color:var(--accent-text); }
+.live-switch { display:inline-flex; padding:4px; gap:4px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+.live-switch button { min-width:104px; min-height:44px; padding:0 18px; border:0; border-radius:5px; background:transparent; color:var(--text-secondary); font-size:14px; font-weight:800; }
+.live-switch button:hover { color:#fff; }
+.live-switch button[aria-selected="true"] { background:var(--accent); color:#fff; }
+.coaching-home .live-preview { border:1px solid var(--gray); border-bottom:3px solid var(--accent); }
+.live-open { margin-top:12px; }
+.coaching-home .coach-hero { border-bottom:0; }
+@media(max-width:700px) {
+ .profile-hero { padding:48px 16px 44px; }
+ .profile-avatar { width:140px; height:140px; }
+ .profile-tagline { font-size:15px; }
+ .profile-socials { gap:8px; }
+ .profile-socials a { width:40px; height:40px; border-radius:8px; }
+ .profile-socials svg { width:20px; height:20px; }
+ .live-section { padding-block:36px; }
+ .live-head { flex-direction:column; align-items:stretch; }
+ .live-switch button { flex:1; }
+}
