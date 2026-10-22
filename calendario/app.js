@@ -106,11 +106,14 @@ function render(data) {
       m.style.gridColumn = `${i + 1} / span ${span}`;
       months.append(m);
     }
-    const cell = el('span', 'tl-day');
+    const cell = el('button', 'tl-day');
+    cell.type = 'button';
+    cell.dataset.index = i;
+    cell.setAttribute('aria-pressed', 'false');
     if (i === todayIndex) cell.classList.add('is-today');
     if (d.getDay() === 0 || d.getDay() === 6) cell.classList.add('is-weekend');
     cell.append(el('small', '', clean(weekday.format(d))), el('b', '', String(d.getDate())));
-    if (i === todayIndex) cell.setAttribute('aria-label', `Hoy, ${d.getDate()}`);
+    cell.setAttribute('aria-label', `${i === todayIndex ? 'Hoy, ' : ''}${clean(weekday.format(d))} ${d.getDate()} de ${monthName.format(d)}: marcar columna`);
     days.append(cell);
   }
 
@@ -121,6 +124,24 @@ function render(data) {
     col.setAttribute('aria-hidden', 'true');
     rows.append(col);
   }
+  // Columna guía: al pulsar un día se marca hacia abajo para ver qué eventos coinciden.
+  const pick = el('span', 'tl-pick');
+  pick.setAttribute('aria-hidden', 'true');
+  pick.hidden = true;
+  rows.append(pick);
+  let picked = null;
+  days.addEventListener('click', (event) => {
+    const cell = event.target.closest('.tl-day');
+    if (!cell) return;
+    const i = Number(cell.dataset.index);
+    if (picked) { picked.classList.remove('is-picked'); picked.setAttribute('aria-pressed', 'false'); }
+    if (picked === cell) { picked = null; pick.hidden = true; return; }
+    picked = cell;
+    cell.classList.add('is-picked');
+    cell.setAttribute('aria-pressed', 'true');
+    pick.style.gridColumn = `${i + 1}`;
+    pick.hidden = false;
+  });
   eventos.forEach((event, r) => {
     const start = parse(event.inicio);
     const end = parse(event.fin);
