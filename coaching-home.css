@@ -264,3 +264,7 @@
  .coach-about { grid-template-columns:1fr; gap:36px; }
  .about-photo { width:min(300px,calc(100% - 14px)); }
 }
+/* Standalone "Sobre mí" page reuses the homepage shell. */
+.coaching-home .topbar-nav a[aria-current="page"] { color:var(--accent-text); }
+.about-page .coach-about { border-top:0; padding-block:80px 56px; }
+@media(max-width:700px) { .about-page .coach-about { padding-block:40px 32px; } }
