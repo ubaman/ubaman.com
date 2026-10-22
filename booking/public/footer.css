@@ -38,3 +38,7 @@
   .sf-social a { width: 40px; height: 40px; }
   .sf-bottom { flex-direction: column; margin-top: 32px; }
 }
+.sf-mail { display: inline-flex !important; align-items: center; gap: 8px; margin-top: 16px; font-size: 13px; word-break: break-all; }
+.sf-mail svg { flex: none; width: 18px; height: 18px; }
+.sf-legal { display: flex; flex-wrap: wrap; gap: 18px; }
+.sf-legal a { font-size: 12px; }

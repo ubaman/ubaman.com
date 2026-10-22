@@ -308,3 +308,13 @@
  .coaching-home .topbar-nav .nav-coach { margin-left:6px; padding-inline:14px; }
  .brand { font-size:28px; }
 }
+/* Legal page: readable single column. */
+.legal { max-width:780px; padding-block:64px 72px; }
+.legal-title { margin:0 0 10px; font:400 clamp(48px,7vw,80px)/.95 var(--display); }
+.legal-title em { font-style:normal; color:var(--accent-text); }
+.legal-updated { margin:0 0 40px; color:var(--muted); font-size:13px; }
+.legal section { padding:22px 0; border-top:1px solid var(--line); }
+.legal h2 { margin:0 0 10px; font:400 26px/1.1 var(--display); letter-spacing:.6px; }
+.legal p:not(.eyebrow):not(.legal-updated) { margin:0 0 12px; color:var(--text-secondary); font-size:15px; line-height:1.8; }
+.legal a { color:var(--accent-text); text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:700px) { .legal { padding-block:40px 48px; } }
