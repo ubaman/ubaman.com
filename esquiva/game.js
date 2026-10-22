@@ -95,12 +95,12 @@ function update(dt){
 function circle(x,y,r,color,fill=true){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx[fill?'fillStyle':'strokeStyle']=color;ctx[fill?'fill':'stroke']();}
 function line(x,y,bx,by,color,width){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(bx,by);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
 function draw(){
- ctx.clearRect(0,0,W,H);ctx.fillStyle='#0b1421';ctx.fillRect(0,0,W,H);
- ctx.strokeStyle='#203040';ctx.lineWidth=1;
- for(let x=0;x<W;x+=60)line(x,0,x,H,'#182b38',1);
- for(let y=0;y<H;y+=60)line(0,y,W,y,'#182b38',1);
- ctx.strokeStyle='#33515c';ctx.lineWidth=2;ctx.strokeRect(10,10,W-20,H-20);
- circle(W/2,H/2,105,'#203845',false);circle(W/2,H/2,6,'#33515c');
+ ctx.clearRect(0,0,W,H);ctx.fillStyle='#232326';ctx.fillRect(0,0,W,H);
+ ctx.strokeStyle='#38383B';ctx.lineWidth=1;
+ for(let x=0;x<W;x+=60)line(x,0,x,H,'#313134',1);
+ for(let y=0;y<H;y+=60)line(0,y,W,y,'#313134',1);
+ ctx.strokeStyle='#4B4B4E';ctx.lineWidth=2;ctx.strokeRect(10,10,W-20,H-20);
+ circle(W/2,H/2,105,'#3A3A3D',false);circle(W/2,H/2,6,'#4B4B4E');
  for(const h of hazards){
    const t=h.age-h.warn,ex=h.x+Math.cos(h.a)*1400,ey=h.y+Math.sin(h.a)*1400;
    ctx.save();
@@ -122,10 +122,10 @@ function draw(){
    }
    ctx.restore();
  }
- if(state==='playing'){circle(target.x,target.y,6,'#f6c84a',false);}
+ if(state==='playing'){circle(target.x,target.y,6,'#F0547D',false);}
  ctx.save();ctx.globalAlpha=inv>0?.45+.35*Math.sin(time*35):1;
- ctx.shadowColor='#f6c84a';ctx.shadowBlur=18;circle(p.x,p.y,R+3,'#f6c84a');ctx.shadowBlur=0;
- circle(p.x,p.y,R,'#193442');
+ ctx.shadowColor='#F0547D';ctx.shadowBlur=18;circle(p.x,p.y,R+3,'#F0547D');ctx.shadowBlur=0;
+ circle(p.x,p.y,R,'#363639');
  // Stylized masked swordsman: original geometric avatar, with visible hitbox.
  ctx.fillStyle='#f3e0b8';ctx.fillRect(p.x-6,p.y-5,12,6);ctx.fillStyle='#172030';ctx.fillRect(p.x-7,p.y-1,14,6);
  line(p.x+9,p.y+5,p.x+19,p.y-18,'#d4eef9',3);circle(p.x,p.y,3,'#ffffff');ctx.restore();
