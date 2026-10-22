@@ -95,8 +95,13 @@ function render(data) {
     months.push({ name: monthName.format(d), offset: daysBetween(range.start, d), days: daysBetween(d, last) });
   }
 
+  // Un solo calendario: todo ordenado por fecha de inicio (lo ya disponible primero) y luego por fin.
+  const startKey = (e) => (e.inicio ? parse(e.inicio) : range.start).getTime();
+  const endKey = (e) => (e.fin ? parse(e.fin) : range.end).getTime();
+  const eventos = [...data.eventos].sort((a, b) => startKey(a) - startKey(b) || endKey(a) - endKey(b));
+
   groupsEl.replaceChildren();
-  data.grupos.forEach((group, gi) => {
+  [{ titulo: 'Esquema de la versión', eventos }].forEach((group, gi) => {
     const section = el('section', 'group');
     const titleId = `grupo-${gi}`;
     section.setAttribute('aria-labelledby', titleId);

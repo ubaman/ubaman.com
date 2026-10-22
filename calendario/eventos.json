@@ -1,35 +1,20 @@
 {
   "titulo": "Calendario de Wild Rift",
-  "rango": { "inicio": "2026-10-01", "fin": "2026-12-31" },
-  "grupos": [
-    {
-      "titulo": "Nuevos aspectos",
-      "eventos": [
-        { "nombre": "Zyra Reina Guerrera Prestigiosa y Sivir, Nidalee y Kalista Reinas Guerreras", "inicio": "2026-10-22", "fin": null, "etiqueta": "", "imagen": "" },
-        { "nombre": "Sion Chibi y Malphite Ciudad Maravilla", "inicio": "2026-10-29", "fin": null, "etiqueta": "", "imagen": "" },
-        { "nombre": "Arcane: Viktor Redentor", "inicio": "2026-11-10", "fin": null, "etiqueta": "", "imagen": "" },
-        { "nombre": "Sylas Maestro del Ramen", "inicio": "2026-11-11", "fin": null, "etiqueta": "", "imagen": "" },
-        { "nombre": "Camille Pacificadora de Demonios Prestigiosa y Fiora Espada Creciente Edición Exquisita", "inicio": "2026-11-19", "fin": null, "etiqueta": "", "imagen": "" }
-      ]
-    },
-    {
-      "titulo": "Modos de juego",
-      "eventos": [
-        { "nombre": "Arena", "inicio": "2026-09-22", "fin": "2027-01-04", "etiqueta": "", "imagen": "" },
-        { "nombre": "ARAM AAA Clásico", "inicio": "2026-10-22", "fin": "2026-11-04", "etiqueta": "", "imagen": "" },
-        { "nombre": "URF", "inicio": "2026-11-05", "fin": "2026-11-18", "etiqueta": "", "imagen": "" },
-        { "nombre": "Grieta Turbocargada", "inicio": "2026-11-19", "fin": "2026-12-02", "etiqueta": "", "imagen": "" }
-      ]
-    },
-    {
-      "titulo": "Campeón, eventos y Wild Pass",
-      "eventos": [
-        { "nombre": "Sylas", "inicio": "2026-11-11", "fin": null, "etiqueta": "Nuevo campeón", "imagen": "" },
-        { "nombre": "Kog'Maw Sacapuntas", "inicio": null, "fin": "2026-12-01", "etiqueta": "Wild Pass", "imagen": "" },
-        { "nombre": "Tesoro escondido de Reinos en Guerra", "inicio": null, "fin": "2026-10-28", "etiqueta": "Evento", "imagen": "" },
-        { "nombre": "¡Todo listo para el Smash!", "inicio": "2026-11-17", "fin": "2026-11-30", "etiqueta": "Evento", "imagen": "" },
-        { "nombre": "La maravillosa máquina expendedora", "inicio": "2026-11-18", "fin": "2026-12-17", "etiqueta": "Evento", "imagen": "" }
-      ]
-    }
+  "rango": {"inicio": "2026-10-01", "fin": "2026-12-31"},
+  "eventos": [
+    {"nombre": "Zyra Reina Guerrera Prestigiosa y Sivir, Nidalee y Kalista Reinas Guerreras", "inicio": "2026-10-22", "fin": null, "etiqueta": "Aspecto", "imagen": ""},
+    {"nombre": "Sion Chibi y Malphite Ciudad Maravilla", "inicio": "2026-10-29", "fin": null, "etiqueta": "Aspecto", "imagen": ""},
+    {"nombre": "Arcane: Viktor Redentor", "inicio": "2026-11-10", "fin": null, "etiqueta": "Aspecto", "imagen": ""},
+    {"nombre": "Sylas Maestro del Ramen", "inicio": "2026-11-11", "fin": null, "etiqueta": "Aspecto", "imagen": ""},
+    {"nombre": "Camille Pacificadora de Demonios Prestigiosa y Fiora Espada Creciente Edición Exquisita", "inicio": "2026-11-19", "fin": null, "etiqueta": "Aspecto", "imagen": ""},
+    {"nombre": "Arena", "inicio": "2026-09-22", "fin": "2027-01-04", "etiqueta": "Modo de juego", "imagen": ""},
+    {"nombre": "ARAM AAA Clásico", "inicio": "2026-10-22", "fin": "2026-11-04", "etiqueta": "Modo de juego", "imagen": ""},
+    {"nombre": "URF", "inicio": "2026-11-05", "fin": "2026-11-18", "etiqueta": "Modo de juego", "imagen": ""},
+    {"nombre": "Grieta Turbocargada", "inicio": "2026-11-19", "fin": "2026-12-02", "etiqueta": "Modo de juego", "imagen": ""},
+    {"nombre": "Sylas", "inicio": "2026-11-11", "fin": null, "etiqueta": "Nuevo campeón", "imagen": ""},
+    {"nombre": "Kog'Maw Sacapuntas", "inicio": null, "fin": "2026-12-01", "etiqueta": "Wild Pass", "imagen": ""},
+    {"nombre": "Tesoro escondido de Reinos en Guerra", "inicio": null, "fin": "2026-10-28", "etiqueta": "Evento", "imagen": ""},
+    {"nombre": "¡Todo listo para el Smash!", "inicio": "2026-11-17", "fin": "2026-11-30", "etiqueta": "Evento", "imagen": ""},
+    {"nombre": "La maravillosa máquina expendedora", "inicio": "2026-11-18", "fin": "2026-12-17", "etiqueta": "Evento", "imagen": ""}
   ]
 }
