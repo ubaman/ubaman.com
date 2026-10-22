@@ -302,3 +302,9 @@
  .live-head { flex-direction:column; align-items:stretch; }
  .live-switch button { flex:1; }
 }
+/* Nine menu items: tighten the desktop menu so it stays on one line down to the mobile breakpoint. */
+@media(min-width:901px) and (max-width:1180px) {
+ .coaching-home .topbar-nav a { padding-inline:8px; font-size:13px; }
+ .coaching-home .topbar-nav .nav-coach { margin-left:6px; padding-inline:14px; }
+ .brand { font-size:28px; }
+}
