@@ -118,3 +118,21 @@ button.tl-day.is-today:hover { background: #D91E55; }
 .tl-pick { grid-row: 1 / -1; z-index: 2; margin: -12px 0 -14px; background: rgba(242,240,240,.07); border-inline: 2px dashed rgba(242,240,240,.6); pointer-events: none; }
 .tl-pick[hidden] { display: none; }
 .tl-row { z-index: 1; }
+
+/* Subtle coaching banner under the calendar. */
+.promo { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 14px 16px; background: linear-gradient(90deg, rgba(111,34,50,.45), rgba(35,35,38,.6) 55%); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; }
+.promo img { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+.promo p { flex: 1; margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.5; }
+.promo strong { color: #fff; }
+.promo-actions { display: flex; align-items: center; gap: 14px; flex: none; }
+.promo-link { color: var(--text-secondary); font-size: 13px; font-weight: 700; }
+.promo-link:hover { color: var(--accent-text); }
+.promo-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border-radius: 6px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; }
+.promo-cta:hover { background: #D91E55; }
+@media (max-width: 760px) {
+  .promo { flex-wrap: wrap; gap: 12px; }
+  .promo img { width: 48px; height: 48px; }
+  .promo p { flex-basis: calc(100% - 64px); font-size: 13px; }
+  .promo-actions { width: 100%; justify-content: space-between; }
+  .promo-cta { flex: 1; justify-content: center; }
+}
