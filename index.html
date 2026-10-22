@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/portal.css?v=20260924-2">
-  <link rel="stylesheet" href="/coaching-home.css?v=20261015-3">
+  <link rel="stylesheet" href="/coaching-home.css?v=20261022-1">
   <link rel="canonical" href="https://ubaman.com/">
   <script src="/hub.js?v=20260918-1" defer></script>
   <script src="/coaching-offer.js?v=20261015-1" defer></script>
@@ -24,6 +24,7 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="nav-shell">
+      <a class="brand" href="#inicio" aria-label="Ubaman, ir al inicio">UBAMAN<span aria-hidden="true">.</span></a>
       <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-label">Menú</span><span class="menu-lines" aria-hidden="true"></span></button>
       <nav id="primary-navigation" class="topbar-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
@@ -43,8 +44,8 @@
         <p class="eyebrow">LEAGUE OF LEGENDS · COACHING 1 A 1</p>
         <h1 id="hero-title">MEJORA TU JUEGO.<br><em>ENTRENA CONMIGO.</em></h1>
         <p class="coach-intro">Soy Ubaman. Revisamos tu partida juntos para entender tus errores y saber qué practicar en tu siguiente ranked.</p>
-        <p class="coach-facts">60 minutos · Online · Atención individual</p>
-        <div class="coach-price"><strong>$40 <small>USD</small></strong><span>por sesión individual</span></div>
+        <ul class="coach-chips" aria-label="Detalles de la sesión"><li>60 minutos</li><li>Online</li><li>Atención individual</li></ul>
+        <div class="coach-price"><strong>$40 <small>USD</small></strong><span>por sesión individual<br>o $32 por sesión en paquete</span></div>
         <div class="hero-actions">
           <a class="button button-primary" href="https://reservas.ubaman.com/">Reservar mi sesión <span aria-hidden="true">↗</span></a>
           <a class="button button-quiet" href="#sesiones">Qué incluye <span aria-hidden="true">↓</span></a>
@@ -126,6 +127,11 @@
         </div>
       </section>
     </div>
+
+    <section class="coach-cta shell" aria-labelledby="cta-title">
+      <div><p class="eyebrow">TU SIGUIENTE RANKED EMPIEZA AQUÍ</p><h2 id="cta-title">RESERVA TU SESIÓN CONMIGO.</h2><p>Elige tu horario online. Pago único, sin suscripción.</p></div>
+      <a class="button button-primary" href="https://reservas.ubaman.com/">Ver horarios disponibles <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
 
   <footer class="shell footer">

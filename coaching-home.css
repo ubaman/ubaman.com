@@ -138,3 +138,53 @@
  .coach-benefits article { padding:22px; border-bottom:1px solid #ffffff14; }
  .coach-benefits article:last-child { border-bottom:1px solid #ffffff14; }
 }
+
+/* Slim header with brand, session chips, compact offer and closing call to action. */
+.coaching-home .nav-shell { justify-content:space-between; gap:24px; min-height:72px; }
+.brand { flex-shrink:0; font:400 32px/1 var(--display); letter-spacing:1px; color:var(--white); }
+.brand span { color:#ed4136; }
+.brand:hover { color:var(--cyan); }
+.coaching-home .topbar-nav { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; width:auto; gap:2px; padding-block:12px; }
+.coaching-home .topbar-nav a { min-height:44px; padding-inline:14px; background:transparent; border-color:transparent; color:#d6d2ca; font-size:14px; font-weight:700; }
+.coaching-home .topbar-nav a:hover,
+.coaching-home .topbar-nav a:focus-visible { background:transparent; border-color:transparent; color:var(--cyan); }
+.coaching-home .topbar-nav .nav-coach { margin-left:14px; padding-inline:22px; background:var(--cyan); border-color:var(--cyan); color:#080808; font-weight:800; }
+.coaching-home .coach-hero { padding-block:72px 80px; }
+.coach-copy h1 { font-size:clamp(54px,6.2vw,92px); line-height:.98; }
+.coach-chips { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+.coach-chips li { display:inline-flex; align-items:center; gap:9px; padding:9px 13px; background:#111; border:1px solid #ffffff24; border-radius:4px; color:#ece9e2; font-size:13px; font-weight:700; }
+.coach-chips li::before { content:""; width:6px; height:6px; background:#ed4136; }
+.coach-price { margin-top:26px; }
+.coach-price strong { font-size:44px; }
+.coach-price > span { line-height:1.5; }
+.coach-benefits .step-label { display:block; }
+.coach-cta { display:flex; align-items:center; justify-content:space-between; gap:32px; margin-block:24px 72px; padding:44px; background:#14120b; border:1px solid #ffd52a55; border-left:5px solid var(--cyan); border-radius:4px; }
+.coach-cta .eyebrow { color:#ff8f80; }
+.coach-cta h2 { margin:0; font:400 clamp(34px,4vw,52px)/1.05 var(--display); }
+.coach-cta p:not(.eyebrow) { margin:10px 0 0; color:var(--muted); font-size:14px; }
+.coach-cta .button { flex-shrink:0; }
+.coaching-offer { width:min(300px,calc(100vw - 32px)); padding:20px; }
+.coaching-offer h2 strong { font-size:52px; }
+.coaching-offer .offer-description { margin:10px 0 14px; }
+@media(max-width:900px) {
+ .coaching-home .nav-shell { flex-wrap:nowrap; min-height:64px; }
+ .brand { font-size:28px; }
+ .coaching-home .topbar.menu-ready .menu-toggle { width:auto; min-height:44px; padding:0 16px; }
+ .coaching-home .topbar.menu-open .topbar-nav a { justify-content:center; background:#111; border-color:#ffffff20; }
+ .coaching-home .topbar.menu-open .topbar-nav .nav-coach { margin-left:0; background:var(--cyan); color:#080808; }
+}
+@media(max-width:700px) {
+ .coaching-home .coach-hero { padding-block:36px 40px; }
+ .coach-copy h1 { font-size:clamp(46px,13vw,64px); }
+ .coach-cta { flex-direction:column; align-items:stretch; padding:28px 22px; margin-bottom:48px; }
+}
+/* On phones the offer becomes a slim bar so it never hides the content. */
+@media(max-width:600px) {
+ .coaching-home { padding-bottom:84px; }
+ .coaching-offer { left:12px; right:12px; width:auto; display:grid; grid-template-columns:1fr auto; align-items:center; gap:10px; padding:10px 46px 10px 14px; border-top-width:3px; }
+ .coaching-offer .offer-eyebrow,.coaching-offer .offer-description { display:none; }
+ .coaching-offer h2 { display:block; font-size:18px; line-height:1; }
+ .coaching-offer h2 strong { display:block; font-size:32px; margin:0 0 2px; }
+ .coaching-offer .offer-cta { min-height:44px; padding:8px 12px; font-size:13px; gap:8px; }
+ .offer-close { top:50%; transform:translateY(-50%); }
+}
