@@ -318,3 +318,5 @@
 .legal p:not(.eyebrow):not(.legal-updated) { margin:0 0 12px; color:var(--text-secondary); font-size:15px; line-height:1.8; }
 .legal a { color:var(--accent-text); text-decoration:underline; text-underline-offset:3px; }
 @media(max-width:700px) { .legal { padding-block:40px 48px; } }
+.legal ul { margin:0 0 12px; padding-left:20px; color:var(--text-secondary); font-size:15px; line-height:1.8; }
+.legal strong { color:var(--white); }
