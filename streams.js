@@ -1,24 +1,26 @@
-// Alterna el reproductor de "Mis directos" entre Twitch y Kick.
+// Alterna el reproductor de "Mis directos" entre Twitch y Kick; el directo carga sin pulsar play.
 (() => {
   const tabs = [...document.querySelectorAll('.live-switch [role="tab"]')];
   const panel = document.getElementById('live-player');
+  const frame = panel && panel.querySelector('iframe');
   const openLink = document.querySelector('.live-open');
-  if (!tabs.length || !panel) return;
+  if (!tabs.length || !frame) return;
 
   const platforms = {
     twitch: {
       name: 'Twitch',
       page: 'https://www.twitch.tv/elubaman',
-      embed: () => `https://player.twitch.tv/?channel=elubaman&parent=${window.location.hostname}&autoplay=true`,
-      launch: 'https://player.twitch.tv/?channel=elubaman&parent=ubaman.com&autoplay=false'
+      // Twitch solo permite el reproductor en el dominio indicado en "parent".
+      embed: () => `https://player.twitch.tv/?channel=elubaman&parent=${window.location.hostname}&autoplay=true&muted=true`
     },
     kick: {
       name: 'Kick',
       page: 'https://kick.com/ubaman',
-      embed: () => 'https://player.kick.com/ubaman?autoplay=true',
-      launch: 'https://player.kick.com/ubaman?autoplay=true'
+      embed: () => 'https://player.kick.com/ubaman?autoplay=true&muted=true'
     }
   };
+
+  if (window.location.hostname !== 'ubaman.com') frame.src = platforms.twitch.embed();
 
   const select = (tab) => {
     const p = platforms[tab.dataset.platform];
@@ -28,23 +30,10 @@
       t.tabIndex = active ? 0 : -1;
     });
     panel.setAttribute('aria-labelledby', tab.id);
+    frame.src = p.embed();
+    frame.title = `Directo de Ubaman en ${p.name}`;
     openLink.href = p.page;
     openLink.firstChild.textContent = `Abrir en ${p.name} `;
-
-    // Si el reproductor ya está cargado, se cambia directamente de canal.
-    const frame = panel.querySelector('iframe');
-    if (frame) {
-      frame.src = p.embed();
-      frame.title = `Directo de Ubaman en ${p.name}`;
-      return;
-    }
-    const launch = panel.querySelector('.media-launch');
-    if (launch) {
-      launch.dataset.embedSrc = p.launch;
-      launch.dataset.embedTitle = `Directo de Ubaman en ${p.name}`;
-      launch.setAttribute('aria-label', `Cargar el reproductor de ${p.name}`);
-      launch.querySelector('.launch-label').textContent = `VER EN ${p.name.toUpperCase()}`;
-    }
   };
 
   tabs.forEach((tab, i) => {
