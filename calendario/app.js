@@ -61,6 +61,9 @@ function thumb(event) {
 
 function render(data) {
   const range = { start: parse(data.rango.inicio), end: parse(data.rango.fin) };
+  // Solo se muestra desde 2 días antes de hoy: lo anterior ya no interesa.
+  const earliest = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
+  if (earliest > range.start) range.start = earliest;
   const total = daysBetween(range.start, range.end) + 1;
   const rangeYear = range.start.getFullYear();
   const todayIndex = today >= range.start && today <= range.end ? daysBetween(range.start, today) : null;
@@ -69,7 +72,9 @@ function render(data) {
   // Todo ordenado por fecha de inicio (lo ya disponible primero) y luego por fin.
   const startKey = (e) => (e.inicio ? parse(e.inicio) : range.start).getTime();
   const endKey = (e) => (e.fin ? parse(e.fin) : range.end).getTime();
-  const eventos = [...data.eventos].sort((a, b) => startKey(a) - startKey(b) || endKey(a) - endKey(b));
+  const eventos = data.eventos
+    .filter((e) => !e.fin || parse(e.fin) >= range.start)
+    .sort((a, b) => startKey(a) - startKey(b) || endKey(a) - endKey(b));
 
   const board = el('section', 'board');
   board.setAttribute('aria-label', 'Calendario de eventos');
